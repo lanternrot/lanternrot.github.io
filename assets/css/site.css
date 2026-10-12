@@ -1,0 +1,83 @@
+:root {
+  --bg: #16181C;
+  --surface: #1E2126;
+  --line: #2C3036;
+  --text: #F3EFE6;
+  --muted: #A9A79F;
+  --mint: #7EE0A0;
+  --amber: #FFB84D;
+  --display: "Lexend Zetta", "Lexend", system-ui, sans-serif;
+  --body: "Lexend", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --wrap: 1040px;
+}
+* { box-sizing: border-box; }
+html { color-scheme: dark; }
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font: 400 17px/1.6 var(--body);
+  -webkit-font-smoothing: antialiased;
+}
+img { display: block; max-width: 100%; height: auto; }
+a { color: var(--mint); text-underline-offset: 3px; }
+a:hover { color: var(--amber); }
+:focus-visible { outline: 2px solid var(--amber); outline-offset: 3px; }
+
+.wrap { width: min(var(--wrap), 100% - 32px); margin-inline: auto; }
+
+/* hero */
+.hero { padding: 88px 0 72px; text-align: center; border-bottom: 1px solid var(--line); }
+.hero .logo { width: min(620px, 100%); margin: 0 auto; }
+.hero .lede { max-width: 34em; margin: 36px auto 0; font-size: 1.15rem; color: var(--text); }
+.status {
+  display: inline-flex; align-items: center; gap: 10px; margin-top: 28px;
+  font: 600 0.72rem/1 var(--display); letter-spacing: 0.18em; text-transform: uppercase; color: var(--amber);
+}
+.status::before { content: ""; width: 9px; height: 9px; background: var(--mint); }   /* a square "pixel", like the logo's rot */
+
+/* sections */
+section { padding: 72px 0; border-bottom: 1px solid var(--line); }
+.eyebrow { margin: 0 0 10px; font: 600 0.72rem/1 var(--display); letter-spacing: 0.2em; text-transform: uppercase; color: var(--mint); }
+h2 { margin: 0 0 14px; font: 700 clamp(1.4rem, 3.2vw, 2rem)/1.2 var(--display); letter-spacing: 0.02em; text-transform: uppercase; }
+h3 { margin: 0 0 6px; font: 600 1.05rem/1.3 var(--body); }
+.section-intro { max-width: 40em; margin: 0 0 36px; color: var(--muted); }
+
+/* featured game */
+.feature { display: grid; grid-template-columns: 1.35fr 1fr; gap: 40px; align-items: center; }
+.feature .shots { display: grid; gap: 12px; }
+.feature .shots img { border: 1px solid var(--line); background: var(--surface); }
+.feature .shots .row { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+.facts { margin: 18px 0 0; padding: 0; list-style: none; }
+.facts li { padding: 8px 0 8px 22px; border-top: 1px solid var(--line); position: relative; color: var(--muted); }
+.facts li::before { content: ""; position: absolute; left: 0; top: 17px; width: 8px; height: 8px; background: var(--amber); }
+.tag { display: inline-block; margin-top: 18px; padding: 6px 10px; border: 1px solid var(--line); font-size: 0.85rem; color: var(--muted); }
+
+/* stream games grid */
+.grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(290px, 1fr)); gap: 24px; }
+.card { background: var(--surface); border: 1px solid var(--line); display: flex; flex-direction: column; }
+.card img { aspect-ratio: 16 / 10; object-fit: cover; width: 100%; border-bottom: 1px solid var(--line); }
+.card .body { padding: 18px 20px 20px; display: flex; flex-direction: column; gap: 8px; flex: 1; }
+.card p { margin: 0; color: var(--muted); font-size: 0.95rem; }
+.card .credit { margin-top: auto; padding-top: 10px; font-size: 0.85rem; color: var(--muted); }
+.card .credit a { font-weight: 600; }
+
+footer { padding: 40px 0 56px; color: var(--muted); font-size: 0.9rem; }
+footer .wrap { display: flex; flex-wrap: wrap; gap: 16px; justify-content: space-between; align-items: center; }
+footer img { width: 28px; }
+footer .brand { display: flex; gap: 12px; align-items: center; }
+
+@media (max-width: 760px) {
+  .hero { padding: 56px 0 48px; }
+  .feature { grid-template-columns: 1fr; gap: 24px; }
+  section { padding: 52px 0; }
+}
+code { font: 600 0.9em/1 ui-monospace, "Cascadia Code", Menlo, monospace; color: var(--amber); }
+.feature a[href$=".apk"] {
+  display: inline-block; margin-top: 8px; padding: 12px 18px; background: var(--mint); color: var(--bg);
+  font: 600 0.95rem/1 var(--body); text-decoration: none;
+}
+.feature a[href$=".apk"]:hover { background: var(--amber); color: var(--bg); }
+.feature .shots .row { grid-template-columns: auto auto; justify-content: start; }
+.feature .shots .row img { height: 360px; width: auto; }
+@media (max-width: 760px) { .feature .shots .row img { height: auto; width: 100%; } .feature .shots .row { grid-template-columns: 1fr 1fr; } }
