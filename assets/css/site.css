@@ -81,3 +81,13 @@ code { font: 600 0.9em/1 ui-monospace, "Cascadia Code", Menlo, monospace; color:
 .feature .shots .row { grid-template-columns: auto auto; justify-content: start; }
 .feature .shots .row img { height: 360px; width: auto; }
 @media (max-width: 760px) { .feature .shots .row img { height: auto; width: 100%; } .feature .shots .row { grid-template-columns: 1fr 1fr; } }
+.game-logo { margin: 4px 0 10px; }
+.game-logo img { width: min(360px, 100%); }
+.game-subtitle { width: min(400px, 100%); margin-bottom: 18px; }
+.game-tagline { font-weight: 600; }
+.feature { grid-template-columns: auto 1fr; }
+.feature .shots .row img { height: 440px; }
+@media (max-width: 760px) {
+  .feature { grid-template-columns: 1fr; }
+  .feature .shots .row img { height: auto; width: 100%; }
+}
