@@ -1,0 +1,32 @@
+title: Lantern Rot Software
+description: "An independent game and software studio: Dorf, a dark-fantasy hero battler for Android, and Twitch chat games built for streamers."
+url: https://lanternrot.com
+lang: en
+
+# News posts live in _posts/ and are served at /news/YYYY/MM/DD/slug/.
+permalink: /news/:year/:month/:day/:title/
+
+plugins:
+  - jekyll-feed
+
+feed:
+  path: feed.xml
+
+# The Web3Forms access key for the beta form. It is public by design (it ends
+# up in the page source either way). Get it at web3forms.com using the
+# beta@lanternrot.com address, then replace the placeholder below. While the
+# placeholder is in place, the form shows "not connected yet" instead of sending.
+web3forms_access_key: "PASTE-WEB3FORMS-ACCESS-KEY-HERE"
+
+# Dev tooling and local-only files never ship to the site.
+exclude:
+  - tools/
+  - tests/
+  - package.json
+  - package-lock.json
+  - node_modules/
+  - vendor/
+  - Gemfile
+  - Gemfile.lock
+  - TEST-LIST.md
+  - README*
