@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  {%- if page.url == "/" %}
+  {%- assign page_title = site.title %}
+  {%- else %}
+  {%- assign page_title = page.title | append: " · " | append: site.title %}
+  {%- endif %}
+  {%- if page.summary %}
+  {%- assign page_description = page.summary %}
+  {%- else %}
+  {%- assign page_description = site.description %}
+  {%- endif %}
+  <title>{{ page_title | escape }}</title>
+  <meta name="description" content="{{ page_description | escape }}">
+  <meta name="theme-color" content="#16181C">
+  <link rel="icon" href="/favicon.ico" sizes="any">
+  <link rel="icon" href="/assets/img/icon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="/assets/img/apple-touch-icon.png">
+  <meta property="og:type" content="{% if page.layout == 'post' %}article{% else %}website{% endif %}">
+  <meta property="og:url" content="{{ page.url | absolute_url }}">
+  <meta property="og:title" content="{{ page_title | escape }}">
+  <meta property="og:description" content="{% if page.summary %}{{ page.summary | escape }}{% else %}An independent game and software studio. Games, Twitch chat games, and the odd tool.{% endif %}">
+  <meta property="og:image" content="{{ '/assets/img/og-image.png' | absolute_url }}">
+  <meta name="twitter:card" content="summary_large_image">
+  {% feed_meta %}
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lexend+Zetta:wght@600;700;800&family=Lexend:wght@400;500;600&family=Martian+Mono:wght@400;500&display=swap">
+  <link rel="stylesheet" href="/assets/css/site.css">
+</head>
+<body>
+{% include nav.html %}
+{{ content }}
+{% include footer.html %}
+<script type="module" src="/assets/js/site.js"></script>
+</body>
+</html>

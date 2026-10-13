@@ -1,0 +1,20 @@
+---
+layout: default
+---
+<main>
+  <article class="post">
+    <div class="wrap">
+      <a class="back" href="/news/">← All news</a>
+      <header class="post-head">
+        <div class="post-meta">
+          <time datetime="{{ page.date | date: '%Y-%m-%d' }}">{{ page.date | date: "%Y-%m-%d" }}</time>
+          <span class="k{% if page.kind == 'Studio' %} studio{% endif %}">{{ page.kind }}</span>
+        </div>
+        <h1>{{ page.title | escape }}</h1>
+      </header>
+      <div class="prose">
+        {{ content }}
+      </div>
+    </div>
+  </article>
+</main>

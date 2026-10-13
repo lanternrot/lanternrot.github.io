@@ -1,0 +1,4 @@
+{%- comment -%}One copy of the roster for the belt. Pass hidden=true for the duplicate that makes the loop seamless.{%- endcomment -%}
+{%- for hero in site.data.parade -%}
+<li{% if include.hidden %} aria-hidden="true"{% endif %} style="--d:{{ forloop.index0 | times: 0.37 | modulo: 1 | round: 2 }}s"><img class="sprite" src="/assets/img/heroes/{{ hero.id }}.webp" alt="" width="1024" height="128" loading="lazy" decoding="async"><span class="who">{{ hero.name | escape }}</span></li>
+{%- endfor -%}

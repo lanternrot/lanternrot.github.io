@@ -92,3 +92,17 @@ export function chipSegments(version, title) {
   const latest = { text: `Latest: ${title}` };
   return version ? [{ text: `Dorf ${version} · `, version: true }, latest] : [latest];
 }
+
+const KEPT = "Your answers are still filled in";
+
+/** What the visitor reads when a request didn't go through. */
+export function errorMessage(kind) {
+  switch (kind) {
+    case "not-connected":
+      return `This form isn't connected yet, so nothing was sent. ${KEPT}.`;
+    case "rejected":
+      return `The form service turned the request down. ${KEPT}, so check them and try again.`;
+    default:
+      return `The form service didn't answer. ${KEPT}, so try again in a minute.`;
+  }
+}

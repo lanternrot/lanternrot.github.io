@@ -3,8 +3,18 @@ description: "An independent game and software studio: Dorf, a dark-fantasy hero
 url: https://lanternrot.com
 lang: en
 
+# Post dates (and the time of day that orders same-day posts) are read as Eastern.
+timezone: America/New_York
+
 # News posts live in _posts/ and are served at /news/YYYY/MM/DD/slug/.
 permalink: /news/:year/:month/:day/:title/
+
+defaults:
+  - scope:
+      path: ""
+      type: posts
+    values:
+      layout: post
 
 plugins:
   - jekyll-feed
@@ -12,11 +22,11 @@ plugins:
 feed:
   path: feed.xml
 
-# The Web3Forms access key for the beta form. It is public by design (it ends
-# up in the page source either way). Get it at web3forms.com using the
-# beta@lanternrot.com address, then replace the placeholder below. While the
-# placeholder is in place, the form shows "not connected yet" instead of sending.
-web3forms_access_key: "PASTE-WEB3FORMS-ACCESS-KEY-HERE"
+# The Web3Forms access key for the beta form (requests go to beta@lanternrot.com).
+# It is public by design: it ends up in the page source either way. If it is
+# ever blank or reset to a "PASTE-..." stand-in, the form refuses to send and
+# tells the visitor it isn't connected yet.
+web3forms_access_key: "1fd6c060-24d6-4023-b907-a13e81e724c9" # gitleaks:allow (public by design)
 
 # Dev tooling and local-only files never ship to the site.
 exclude:

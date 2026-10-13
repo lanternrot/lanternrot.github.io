@@ -1,0 +1,11 @@
+{%- comment -%}
+The dated news log. Pass limit=N for the latest N posts; leave it off for all of them.
+Each post needs title, kind (Dorf | Studio) and summary in its front matter.
+{%- endcomment -%}
+{%- assign shown = site.posts -%}
+{%- if include.limit -%}{%- assign shown = site.posts | slice: 0, include.limit -%}{%- endif -%}
+<ol class="log">
+  {%- for post in shown %}
+  <li><a href="{{ post.url }}"><time datetime="{{ post.date | date: '%Y-%m-%d' }}">{{ post.date | date: "%Y-%m-%d" }}</time><span class="k{% if post.kind == 'Studio' %} studio{% endif %}">{{ post.kind }}</span><span class="body"><span class="t">{{ post.title | escape }}</span><span class="s">{{ post.summary | escape }}</span></span><span class="go" aria-hidden="true">→</span></a></li>
+  {%- endfor %}
+</ol>

@@ -1,111 +1,145 @@
-<!doctype html>
-<html lang="en">
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Lantern Rot Software</title>
-  <meta name="description" content="Lantern Rot is an independent game and software studio: Dorf, a dark-fantasy hero battler for Android, and Twitch chat games built for streamers.">
-  <meta name="theme-color" content="#16181C">
-  <link rel="icon" href="/favicon.ico" sizes="any">
-  <link rel="icon" href="/assets/img/icon.svg" type="image/svg+xml">
-  <link rel="apple-touch-icon" href="/assets/img/apple-touch-icon.png">
-  <meta property="og:type" content="website">
-  <meta property="og:url" content="https://lanternrot.com/">
-  <meta property="og:title" content="Lantern Rot Software">
-  <meta property="og:description" content="An independent game and software studio. Games, Twitch chat games, and the odd tool.">
-  <meta property="og:image" content="https://lanternrot.com/assets/img/og-image.png">
-  <meta name="twitter:card" content="summary_large_image">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lexend+Zetta:wght@600;700&family=Lexend:wght@400;600&display=swap">
-  <link rel="stylesheet" href="/assets/css/site.css">
-</head>
-<body>
-
-  <header class="hero">
-    <div class="wrap">
-      <h1 style="margin:0"><img class="logo" src="/assets/img/logo-horizontal.svg" alt="Lantern Rot Software" width="1264" height="336"></h1>
-      <p class="lede">Lantern Rot is an independent game and software studio. It makes games, chat games for Twitch streamers, and the odd tool.</p>
-      <p class="status">Studio open · more soon</p>
+---
+layout: default
+---
+{%- assign latest = site.posts.first %}
+<header class="hero">
+  <canvas id="rot" aria-hidden="true"></canvas>
+  <div class="wrap">
+    <div class="words">
+      <h1 style="margin:0">{% include wordmark.html %}</h1>
+      <p class="lede">An independent game and software studio. It makes <strong>Dorf</strong>, a dark-fantasy hero battler, chat games for Twitch streamers, and the odd tool.</p>
+      {%- if latest %}
+      <a class="chip" href="{{ latest.url }}">
+        <span class="dot" aria-hidden="true"></span>
+        <span class="chip-text" data-title="{{ latest.title | escape }}">Latest: {{ latest.title | escape }}</span>
+        <span class="arrow" aria-hidden="true">→</span>
+      </a>
+      {%- endif %}
     </div>
-  </header>
+    <div class="lamp">{% include lantern-mark.html %}</div>
+  </div>
+</header>
 
-  <main>
-    <section id="dorf">
-      <div class="wrap feature">
-        <div class="shots">
-          <div class="row">
-            <img src="/assets/img/dorf-phone-1.webp" alt="A Dorf battle: a party of heroes fighting in a dungeon" width="412" height="900" loading="lazy">
-            <img src="/assets/img/dorf-phone-2.webp" alt="The Dorf summon screen showing a mage hero" width="412" height="915" loading="lazy">
-          </div>
+<main>
+  <section id="dorf">
+    <div class="wrap">
+      <p class="eyebrow">Our game</p>
+      <div class="tile dorf-tile rotting">
+        <div class="phones">
+          <img src="/assets/img/dorf-phone-1.webp" alt="A Dorf battle: a party of heroes fighting in a dungeon" width="412" height="900" loading="lazy">
+          <img src="/assets/img/dorf-phone-2.webp" alt="The Dorf summon screen showing a mage hero" width="412" height="915" loading="lazy">
         </div>
-        <div>
-          <p class="eyebrow">Our game</p>
-          <h2 class="game-logo"><img src="/assets/img/dorf-logo.webp" alt="Dorf" width="900" height="362"></h2>
-          <img class="game-subtitle" src="/assets/img/dorf-subtitle.webp" alt="Domains of Relentless Fighting" width="1000" height="64">
-          <p class="game-tagline">Adventurers wanted. No pay. Frequent death.</p>
-          <p>A dark-fantasy hero battler for Android. Summon heroes, build a party of four, and fight your way through turn-based battles.</p>
+        <div class="dorf-copy">
+          <h2 style="margin:0"><img class="logo" src="/assets/img/dorf-logo.webp" alt="Dorf" width="900" height="362"></h2>
+          <img class="sub" src="/assets/img/dorf-subtitle.webp" alt="Domains of Relentless Fighting" width="1000" height="64">
+          <p class="tagline">Adventurers wanted. No pay. Frequent death.</p>
+          <p style="margin:0;color:var(--muted)">A dark-fantasy hero battler for Android. Summon heroes, build a party of four, and fight your way through turn-based battles, rival parties and the things at the bottom of the Bell Pit.</p>
           <ul class="facts">
             <li>Over 70 heroes across 9 classes</li>
             <li>Summon banners with a pity system</li>
             <li>Four-hero parties, turn-based combat</li>
+            <li>Updates download inside the game</li>
           </ul>
+          <div class="actions">
+            <a class="pill" href="#beta">Request beta access</a>
+            <span class="note">Android only · free</span>
+          </div>
         </div>
       </div>
-    </section>
+    </div>
 
-    <section id="stream-games">
-      <div class="wrap">
+    <div class="parade">
+      <div class="wrap parade-head">
+        <p class="eyebrow" style="margin:0">The roster</p>
+        <p><b>{{ site.data.parade | size }}</b> of the 70+ heroes<span class="hover-only"> · hover to pause</span></p>
+      </div>
+      <div class="belt" aria-label="Some of Dorf's heroes">
+        <ul class="track">{% include parade-items.html %}{% include parade-items.html hidden=true %}</ul>
+      </div>
+    </div>
+
+    <div class="wrap beta" id="beta">
+      <div class="tile form-tile rotting">
+        <h3>Request beta access</h3>
+        <p class="intro">Every request gets read. When a spot opens, the download link and install steps come to your inbox.</p>
+        <form id="beta-form" novalidate data-access-key="{{ site.web3forms_access_key }}">
+          <label for="b-email">Email
+            <input id="b-email" name="email" type="email" autocomplete="email" required placeholder="you@example.com">
+          </label>
+          <label for="b-phone">Android phone
+            <input id="b-phone" name="phone" type="text" required placeholder="e.g. Pixel 8, Galaxy S23">
+          </label>
+          <label for="b-where">How did you hear about Dorf? <span class="opt">optional</span>
+            <textarea id="b-where" name="where" placeholder="A stream, a friend, a post…"></textarea>
+          </label>
+          <label class="check" for="b-news">
+            <input id="b-news" name="news" type="checkbox" value="yes">
+            <span>Also send me Lantern Rot news</span>
+            <span class="opt">rarely</span>
+          </label>
+          <div class="hp" aria-hidden="true">
+            <input type="checkbox" name="botcheck" tabindex="-1" autocomplete="off">
+          </div>
+          <div class="form-foot">
+            <button class="pill" type="submit" id="b-send">Send request</button>
+            <small>Android only. Your email gets beta messages, and news only if you ticked the box. The box doesn't affect your request.</small>
+          </div>
+        </form>
+        <div class="result ok" id="b-ok" hidden role="status"><b>Request received</b>When your spot opens, the download link and install steps go to <span id="b-addr"></span>.</div>
+        <div class="result bad" id="b-bad" hidden role="alert"><b>Request didn't send</b><span id="b-bad-msg"></span></div>
+      </div>
+      <div class="tile how">
+        <h3>How the beta works</h3>
+        <ol class="steps">
+          <li><div><b>You request a spot</b><span>One form, about a minute.</span></div></li>
+          <li><div><b>The link arrives by email</b><span>With the download and these same steps.</span></div></li>
+          <li><div><b>You install the APK</b><span>Your phone asks to allow installs from your browser. If Play Protect warns about an unknown developer, tap <em>More details</em> then <em>Install anyway</em>.</span></div></li>
+          <li><div><b>Updates come to you</b><span>New heroes and fixes download inside the game. No reinstalling.</span></div></li>
+        </ol>
+      </div>
+    </div>
+  </section>
+
+  <section id="games">
+    <div class="wrap">
+      <div class="sec-head">
         <p class="eyebrow">Built for streamers</p>
         <h2>Twitch chat games</h2>
-        <p class="section-intro">Games that live in a streamer's chat: viewers type commands, collect things, and watch it happen on stream. Each one is built for a specific streamer's channel.</p>
-        <div class="grid">
-          <article class="card">
-            <img src="/assets/img/cat-cafe.webp" alt="A cozy cat cafe full of cats and visitors" width="1200" height="750" loading="lazy">
-            <div class="body">
-              <h3>Cat Cafe</h3>
-              <p>Viewers lure and care for wandering cats during the stream. At the end, the winner adopts one for keeps.</p>
-            </div>
-          </article>
-          <article class="card">
-            <img src="/assets/img/duck-pond.webp" alt="A sunny pond with ducks swimming" width="1200" height="750" loading="lazy">
-            <div class="body">
-              <h3>Duckie Pond</h3>
-              <p>Chat adopts ducks with <code>!bread</code>. Ducks stay between streams and nap while the channel is offline. 162 looks to discover.</p>
-            </div>
-          </article>
-          <article class="card">
-            <img src="/assets/img/cookie-cafe.webp" alt="Twelve illustrated cookies" width="1200" height="750" loading="lazy">
-            <div class="body">
-              <h3>Cookie Cafe</h3>
-              <p>Chat bakes and collects cookies: 120 to find across four rarity tiers, kept forever in a CookieDex.</p>
-            </div>
-          </article>
-          <article class="card">
-            <img src="/assets/img/fox-den.webp" alt="Fox kits playing in a park" width="1200" height="750" loading="lazy">
-            <div class="body">
-              <h3>Fox Den</h3>
-              <p>Every chatter gets a fox kit that digs for seasonal finds, and the streamer's vixen carries one to her corner of the screen.</p>
-            </div>
-          </article>
-          <article class="card">
-            <img src="/assets/img/wizards-grimoire.webp" alt="An on-stream book card titled The Bear Who Carried Shells" width="1200" height="750" loading="lazy">
-            <div class="body">
-              <h3>Wizard's Grimoire</h3>
-              <p>A channel-point redeem opens a book on stream with a real entry from history, science, philosophy or words. Spell duels are next.</p>
-            </div>
-          </article>
-        </div>
+        <p class="intro">Games that live in a streamer's chat: viewers type commands, collect things, and watch it happen on stream. Each one is built for a specific channel.</p>
       </div>
-    </section>
-  </main>
-
-  <footer>
-    <div class="wrap">
-      <div class="brand"><img src="/assets/img/mark.svg" alt="" width="28" height="44"> <span>© 2026 Lantern Rot Software™</span></div>
-      <span>lanternrot.com</span>
+      <div class="bento">
+        <article class="tile game big spot">
+          <img src="/assets/img/cat-cafe.webp" alt="A cozy cat cafe full of cats and visitors" width="1200" height="750" loading="lazy">
+          <div class="body"><span class="kind">lure · care · adopt</span><h3>Cat Cafe</h3><p>Viewers lure and care for wandering cats during the stream. At the end, the winner adopts one for keeps.</p></div>
+        </article>
+        <article class="tile game mid spot">
+          <img src="/assets/img/duck-pond.webp" alt="A sunny pond with ducks swimming" width="1200" height="750" loading="lazy">
+          <div class="body"><span class="kind">!bread · 162 looks</span><h3>Duckie Pond</h3><p>Chat adopts ducks with <code>!bread</code>. Ducks stay between streams and nap while the channel is offline.</p></div>
+        </article>
+        <article class="tile game spot">
+          <img src="/assets/img/cookie-cafe.webp" alt="Twelve illustrated cookies" width="1200" height="750" loading="lazy">
+          <div class="body"><span class="kind">120 cookies · 4 rarities</span><h3>Cookie Cafe</h3><p>Chat bakes and collects cookies, kept forever in a CookieDex.</p></div>
+        </article>
+        <article class="tile game spot">
+          <img src="/assets/img/fox-den.webp" alt="Fox kits playing in a park" width="1200" height="750" loading="lazy">
+          <div class="body"><span class="kind">seasonal digs</span><h3>Fox Den</h3><p>Every chatter gets a fox kit that digs for seasonal finds.</p></div>
+        </article>
+        <article class="tile game spot">
+          <img src="/assets/img/wizards-grimoire.webp" alt="An on-stream book card titled The Bear Who Carried Shells" width="1200" height="750" loading="lazy">
+          <div class="body"><span class="kind">channel-point redeem</span><h3>Wizard's Grimoire</h3><p>A redeem opens a book on stream with a real entry from history, science or words.</p></div>
+        </article>
+      </div>
     </div>
-  </footer>
+  </section>
 
-</body>
-</html>
+  <section id="news">
+    <div class="wrap">
+      <div class="sec-head">
+        <p class="eyebrow">News</p>
+        <h2>From the workshop</h2>
+      </div>
+      {% include news-log.html limit=3 %}
+      <div class="log-foot"><a href="/news/">All news →</a><a href="/feed.xml">RSS feed</a></div>
+    </div>
+  </section>
+</main>
