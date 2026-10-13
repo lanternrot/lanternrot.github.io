@@ -111,9 +111,10 @@ function initBetaForm() {
   });
 }
 
-// Hero chip: "Dorf {version} · Latest: {post}". The post title is in the page
-// already; the version comes from Dorf's public version.txt. If that can't be
-// fetched or isn't a version, the chip stays as "Latest: {post}".
+// Hero chip. The page already says "Latest: {post}", which is all it claims
+// without JS. The version comes from Dorf's public version.txt; with it the chip
+// reads "Dorf 4.9.0 is out · …" or "Dorf 4.9.0 · Latest: …" (see chipSegments).
+// If the fetch fails or isn't a version, the chip stays as "Latest: {post}".
 async function initChip() {
   const label = document.querySelector(".chip-text");
   if (!label) return;

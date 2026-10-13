@@ -85,12 +85,22 @@ export function parseVersion(text) {
 }
 
 /**
- * What the hero chip says, as pieces so the version can be styled apart:
- * "Dorf 4.9.0 · Latest: {title}", or just "Latest: {title}" with no version.
+ * What the hero chip says, as pieces so the version can be styled apart.
+ *
+ * - Version live and the latest post is that version's release
+ *   ("Dorf 4.9.0: rivals…"): "Dorf 4.9.0 is out · Rivals…"
+ * - Version live, latest post is about something else: "Dorf 4.9.0 · Latest: {title}"
+ * - No version: "Latest: {title}"
  */
 export function chipSegments(version, title) {
-  const latest = { text: `Latest: ${title}` };
-  return version ? [{ text: `Dorf ${version} · `, version: true }, latest] : [latest];
+  if (!version) return [{ text: `Latest: ${title}` }];
+  const lead = { text: `Dorf ${version}`, version: true };
+  const prefix = `Dorf ${version}:`;
+  const headline = title.startsWith(prefix) ? title.slice(prefix.length).trim() : "";
+  if (headline) {
+    return [lead, { text: ` is out · ${headline[0].toUpperCase()}${headline.slice(1)}` }];
+  }
+  return [lead, { text: ` · Latest: ${title}` }];
 }
 
 const KEPT = "Your answers are still filled in";
