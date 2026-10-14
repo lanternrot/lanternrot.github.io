@@ -13,6 +13,8 @@ A set of pictures side by side: sprites in a row, or paintings in a grid.
   scale_sm  pixel art: whole-number zoom at 620px and narrower (default 1)
   cols      paintings: columns on wide screens (default 3)
   cols_sm   paintings: columns at 620px and narrower (default 2)
+  fit       paintings: "height" puts them in one row at a common height, each as wide as its shape
+            needs (for portraits of different heights; ignores cols and cols_sm)
 
 The first item's kind (from _data/news_art.json) picks the layout: pixel art sits in a row that
 wraps, at native size times scale; paintings fill a grid, and cutout paintings stand on a stage.
@@ -23,7 +25,7 @@ wraps, at native size times scale; paintings fill a grid, and cutout paintings s
 {%- if strip_art.kind == "pixel" -%}
 <figure class="art art-strip art-px" style="--scale:{{ include.scale | default: 2 }};--scale-sm:{{ include.scale_sm | default: 1 }}">
 {%- else -%}
-<figure class="art art-strip art-paint{% if strip_art.cutout %} art-cutout{% endif %}" style="--cols:{{ include.cols | default: 3 }};--cols-sm:{{ include.cols_sm | default: 2 }}">
+<figure class="art art-strip art-paint{% if strip_art.cutout %} art-cutout{% endif %}{% if include.fit == "height" %} art-fit-h{% endif %}" style="--cols:{{ include.cols | default: 3 }};--cols-sm:{{ include.cols_sm | default: 2 }}">
 {%- endif %}
 <ul class="art-set">
 {%- for item in include.items -%}
@@ -32,7 +34,7 @@ wraps, at native size times scale; paintings fill a grid, and cutout paintings s
 {%- if art == nil %}
 <li><p class="art-missing">Missing news art: {{ item_src }} (run tools/news_art.py)</p></li>
 {%- else %}
-<li>{%- assign item_alt = item.alt | default: item.label -%}{% include news-art-img.html src=item_src art=art alt=item_alt %}{% if item.label %}<span class="art-label">{{ item.label }}</span>{% endif %}</li>
+<li style="--ar:{{ art.width | times: 1.0 | divided_by: art.height | round: 4 }}">{%- assign item_alt = item.alt | default: item.label -%}{% include news-art-img.html src=item_src art=art alt=item_alt %}{% if item.label %}<span class="art-label">{{ item.label }}</span>{% endif %}</li>
 {%- endif -%}
 {%- endfor %}
 </ul>
