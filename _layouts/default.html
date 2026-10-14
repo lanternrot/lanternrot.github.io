@@ -23,8 +23,13 @@
   <meta property="og:url" content="{{ page.url | absolute_url }}">
   <meta property="og:title" content="{{ page_title | escape }}">
   <meta property="og:description" content="{% if page.summary %}{{ page.summary | escape }}{% else %}An independent game and software studio. Games, Twitch chat games, and the odd tool.{% endif %}">
-  <meta property="og:image" content="{{ '/assets/img/og-image.png' | absolute_url }}">
+  {%- assign share_image = page.image | default: '/assets/img/og-image.png' %}
+  <meta property="og:image" content="{{ share_image | absolute_url }}">
+  {%- if page.image_alt %}
+  <meta property="og:image:alt" content="{{ page.image_alt | escape }}">
+  {%- endif %}
   <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="{{ share_image | absolute_url }}">
   {% feed_meta %}
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>

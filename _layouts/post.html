@@ -5,6 +5,15 @@ layout: default
   <article class="post">
     <div class="wrap">
       <a class="back" href="/news/">← All news</a>
+      {%- if page.image %}
+      {%- assign banner = site.data.news_art[page.image] %}
+      <figure class="post-banner">
+        <div class="banner-frame" style="--banner:url('{{ page.image }}')"><img src="{{ page.image }}" alt="{{ page.image_alt | escape }}"{% if banner %} width="{{ banner.width }}" height="{{ banner.height }}"{% endif %} fetchpriority="high"></div>
+        {%- if page.image_caption %}
+        <figcaption>{{ page.image_caption }}</figcaption>
+        {%- endif %}
+      </figure>
+      {%- endif %}
       <header class="post-head">
         <div class="post-meta">
           <time datetime="{{ page.date | date: '%Y-%m-%d' }}">{{ page.date | date: "%Y-%m-%d" }}</time>
@@ -12,7 +21,7 @@ layout: default
         </div>
         <h1>{{ page.title | escape }}</h1>
       </header>
-      <div class="prose">
+      <div class="prose{% if page.image %} rich{% endif %}">
         {{ content }}
       </div>
     </div>
