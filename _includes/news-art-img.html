@@ -1,0 +1,8 @@
+{%- comment -%}
+The <img> for one piece of news art, shared by figure.html, art-strip.html and art-rows.html.
+  src   the resolved URL path (see news-art-src.html)
+  art   its _data/news_art.json entry
+  alt   the alt text
+Pixel art gets its native width as --w, which the CSS multiplies by the zoom.
+{%- endcomment -%}
+<img src="{{ include.src }}" alt="{{ include.alt | escape }}" width="{{ include.art.width }}" height="{{ include.art.height }}"{% if include.art.kind == "pixel" %} style="--w:{{ include.art.width }}"{% endif %} loading="lazy">

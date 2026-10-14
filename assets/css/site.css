@@ -327,21 +327,49 @@ code { font: 400 .86em var(--mono); color: var(--amber); }
 .art-cutout img { border: 0; background: none; }
 .art-cutout .art-stage { padding: 16px 16px 0; }
 .art-cutout .art-stage img { width: auto; max-height: 440px; }
-.art-side.art-cutout .art-stage img { max-height: 340px; }
 .art-label {
   font: 400 .64rem/1.3 var(--mono); color: var(--muted); text-transform: uppercase; letter-spacing: .06em;
   text-align: center; text-wrap: balance;
 }
 .art-paint .art-label { text-align: left; }
 .art-cutout .art-label { text-align: center; }
+/* Picture-beside-text blocks (art-rows.html): a monster, a room, a place. */
+.art-rows { clear: both; display: grid; gap: 34px; margin: 1.8em 0 2.4em; }
+.art-row { display: grid; grid-template-columns: var(--media) minmax(0, 1fr); gap: 16px 28px; align-items: start; }
+.art-row-media.art-px .art-stage { min-height: 100%; }
+.art-row-body { max-width: 62ch; }
+.art-row-body p { margin: 0 0 .9em; }
+.art-row-body blockquote { margin-top: 1em; }
+.rich h3 {
+  clear: both; margin: 0 0 .55em; font: 700 .98rem/1.3 var(--display); letter-spacing: .04em;
+  text-transform: uppercase; color: var(--mint);
+}
+.rich > h3 { margin-top: 1.8em; }
+.art-row-body h3 { clear: none; }
+
+/* Hero-change tables: skill, before, after. */
+.rich table { width: 100%; max-width: 65ch; margin: .2em 0 1em; border-collapse: collapse; table-layout: fixed; font-size: .95rem; }
+.rich th:first-child { width: 30%; }
+.rich th, .rich td { padding: 9px 12px 9px 0; border-bottom: 1px solid var(--line); text-align: left; vertical-align: top; overflow-wrap: anywhere; }
+.rich th { font: 500 .66rem/1.4 var(--mono); text-transform: uppercase; letter-spacing: .1em; color: var(--muted); }
+.rich td:first-child { font-weight: 600; }
+.rich td:last-child { color: var(--amber); }
+.rich .why { color: var(--muted); }
+
 .art-missing { padding: 12px 14px; border: 1px solid var(--danger); color: var(--danger); font: 400 .8rem/1.4 var(--mono); }
 @media (min-width: 760px) {
   .art-side { float: right; width: min(32%, 240px); margin: .4em 0 1.2em 32px; }
+  .art-side.art-cutout .art-stage img { max-height: 340px; }
+  .art-side-wide { width: min(42%, 360px); }
+  .art-side-wide.art-cutout .art-stage img { max-height: 620px; }
 }
 @media (max-width: 620px) {
   .art-px img { width: calc(var(--w) * var(--scale-sm) * 1px); }
   .art-paint .art-set { grid-template-columns: repeat(var(--cols-sm), minmax(0, 1fr)); }
   .art-px .art-set { gap: 14px 18px; }
+  .art-row { grid-template-columns: minmax(0, 1fr); }
+  .art-row-media.art-paint img { max-width: 420px; }
+  .rich th, .rich td { padding-right: 8px; font-size: .9rem; }
   .banner-frame img { max-height: none; width: 100%; }
   .rich > p:not(h2 ~ p) { font-size: 1.08rem; }
 }

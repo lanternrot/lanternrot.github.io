@@ -1,0 +1,36 @@
+{%- comment -%}
+A run of picture-beside-text blocks: one per monster, room or place, each with its own heading.
+
+  {% include art-rows.html items=page.art.monsters scale=2 scale_sm=1 %}
+
+  items     a list from the post's front matter, each:
+              - src: phylactery.webp        file name in the post's art folder, or a full path from /
+                title: Phylactery           the block's heading
+                text: "What it does..."      Markdown, a paragraph or two
+                quote: "Lore line..."        optional, shown as a quote under the text
+                quote_by: "The Phylactery, from the Bestiary"   optional
+                alt: "..."                   optional, defaults to the title
+  scale     pixel art: whole-number zoom on wide screens (default 2)
+  scale_sm  pixel art: whole-number zoom at 620px and narrower (default 1)
+  media     width of the picture column on wide screens, in px (default 300)
+
+Pixel art stands on a stage; paintings are framed. On narrow screens the picture sits above its text.
+{%- endcomment -%}
+<div class="art-rows" style="--scale:{{ include.scale | default: 2 }};--scale-sm:{{ include.scale_sm | default: 1 }};--media:{{ include.media | default: 300 }}px">
+{%- for item in include.items -%}
+{%- capture row_src %}{% include news-art-src.html src=item.src %}{% endcapture -%}
+{%- assign art = site.data.news_art[row_src] -%}
+{%- assign row_alt = item.alt | default: item.title %}
+<div class="art-row">
+{%- if art == nil %}
+<p class="art-missing">Missing news art: {{ row_src }} (run tools/news_art.py)</p>
+{%- elsif art.kind == "pixel" %}
+<div class="art-row-media art-px"><div class="art-stage">{% include news-art-img.html src=row_src art=art alt=row_alt %}</div></div>
+{%- else %}
+<div class="art-row-media art-paint{% if art.cutout %} art-cutout{% endif %}">{% include news-art-img.html src=row_src art=art alt=row_alt %}</div>
+{%- endif %}
+<div class="art-row-body"><h3>{{ item.title }}</h3>{{ item.text | markdownify | strip_newlines }}
+{%- if item.quote %}<blockquote><p>{{ item.quote }}</p>{% if item.quote_by %}<p>{{ item.quote_by }}</p>{% endif %}</blockquote>{% endif %}</div>
+</div>
+{%- endfor %}
+</div>

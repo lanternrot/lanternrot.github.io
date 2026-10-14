@@ -32,7 +32,7 @@ wraps, at native size times scale; paintings fill a grid, and cutout paintings s
 {%- if art == nil %}
 <li><p class="art-missing">Missing news art: {{ item_src }} (run tools/news_art.py)</p></li>
 {%- else %}
-<li><img src="{{ item_src }}" alt="{{ item.alt | default: item.label | escape }}" width="{{ art.width }}" height="{{ art.height }}"{% if art.kind == "pixel" %} style="--w:{{ art.width }}"{% endif %} loading="lazy">{% if item.label %}<span class="art-label">{{ item.label }}</span>{% endif %}</li>
+<li>{%- assign item_alt = item.alt | default: item.label -%}{% include news-art-img.html src=item_src art=art alt=item_alt %}{% if item.label %}<span class="art-label">{{ item.label }}</span>{% endif %}</li>
 {%- endif -%}
 {%- endfor %}
 </ul>

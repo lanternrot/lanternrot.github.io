@@ -8,7 +8,8 @@ One picture in a news post, with an optional caption.
   caption   short line under the picture (optional)
   scale     pixel art only: whole-number zoom on wide screens (default 2)
   scale_sm  pixel art only: whole-number zoom at 620px and narrower (default 1)
-  side      true floats it to the right of the text on wide screens (for tall pictures)
+  side      true floats it to the right of the text on wide screens (for tall pictures);
+            "wide" floats it larger, for a portrait that leads a section with several paragraphs beside it
 
 Size and kind (pixel or painted, and whether a painting is a cutout) come from _data/news_art.json,
 which tools/news_art.py writes.
@@ -20,13 +21,13 @@ Art missing from it renders as a red "missing art" box, so a forgotten conversio
 {%- if art == nil -%}
 <p class="art-missing">Missing news art: {{ art_src }} (run tools/news_art.py)</p>
 {%- elsif art.kind == "pixel" -%}
-<figure class="art art-one art-px{% if include.side %} art-side{% endif %}" style="--scale:{{ include.scale | default: 2 }};--scale-sm:{{ include.scale_sm | default: 1 }}">
-<div class="art-stage"><img src="{{ art_src }}" alt="{{ art_alt | escape }}" width="{{ art.width }}" height="{{ art.height }}" style="--w:{{ art.width }}" loading="lazy"></div>
+<figure class="art art-one art-px{% if include.side == "wide" %} art-side art-side-wide{% elsif include.side %} art-side{% endif %}" style="--scale:{{ include.scale | default: 2 }};--scale-sm:{{ include.scale_sm | default: 1 }}">
+<div class="art-stage">{% include news-art-img.html src=art_src art=art alt=art_alt %}</div>
 {%- if include.caption %}<figcaption>{{ include.caption }}</figcaption>{% endif %}
 </figure>
 {%- else -%}
-<figure class="art art-one art-paint{% if art.cutout %} art-cutout{% endif %}{% if include.side %} art-side{% endif %}">
-{%- if art.cutout %}<div class="art-stage">{% endif %}<img src="{{ art_src }}" alt="{{ art_alt | escape }}" width="{{ art.width }}" height="{{ art.height }}" loading="lazy">{% if art.cutout %}</div>{% endif %}
+<figure class="art art-one art-paint{% if art.cutout %} art-cutout{% endif %}{% if include.side == "wide" %} art-side art-side-wide{% elsif include.side %} art-side{% endif %}">
+{%- if art.cutout %}<div class="art-stage">{% endif %}{% include news-art-img.html src=art_src art=art alt=art_alt %}{% if art.cutout %}</div>{% endif %}
 {%- if include.caption %}<figcaption>{{ include.caption }}</figcaption>{% endif %}
 </figure>
 {%- endif -%}
