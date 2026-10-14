@@ -44,37 +44,55 @@
       "name": "deep_ossuary",
       "src": "src/assets/battle_backgrounds/cata_deep_ossuary.png",
       "kind": "painted",
-      "max_width": 400,
+      "max_width": 600,
       "expect": [
         600,
         1000
+      ],
+      "crop": [
+        0,
+        200,
+        600,
+        600
       ]
     },
     {
       "name": "embalmers_hall",
       "src": "src/assets/battle_backgrounds/cata_embalmers_hall.png",
       "kind": "painted",
-      "max_width": 400,
+      "max_width": 600,
       "expect": [
         600,
         1000
+      ],
+      "crop": [
+        0,
+        200,
+        600,
+        600
       ]
     },
     {
       "name": "candle_chapel",
       "src": "src/assets/battle_backgrounds/cata_candle_chapel.png",
       "kind": "painted",
-      "max_width": 400,
+      "max_width": 600,
       "expect": [
         600,
         1000
+      ],
+      "crop": [
+        0,
+        200,
+        600,
+        600
       ]
     },
     {
       "name": "last_mourner",
       "src": "src/assets/npcs/tales/last_mourner.avif",
       "kind": "painted",
-      "max_width": 420
+      "max_width": 600
     },
     {
       "name": "old_knell",
