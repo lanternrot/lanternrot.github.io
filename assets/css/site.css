@@ -270,6 +270,114 @@ code { font: 400 .86em var(--mono); color: var(--amber); }
 .prose h2 { margin: 1.8em 0 .6em; font-size: 1.15rem; }
 .prose strong { font-weight: 600; }
 
+/* ---------- rich posts: a banner, a lede, then sections with art ---------- */
+/* The banner sits on a blurred, darkened copy of itself, so art of any shape fills the row. */
+.post-banner { margin: 0 0 40px; }
+.banner-frame {
+  position: relative; overflow: hidden; display: grid; place-items: center;
+  border: 1px solid var(--line); background: var(--bg-deep);
+}
+.banner-frame::before {
+  content: ""; position: absolute; inset: -40px;
+  background: var(--banner) center / cover; filter: blur(28px) brightness(.35) saturate(1.2);
+}
+.banner-frame img { position: relative; width: auto; max-height: 560px; }
+.post-banner figcaption, .art figcaption {
+  margin-top: 10px; font: 400 .72rem/1.5 var(--mono); color: var(--muted); letter-spacing: .02em;
+}
+
+/* Words keep a reading width; the art may run wider. */
+.prose.rich { max-width: 860px; }
+.rich > p, .rich > ul, .rich > blockquote { max-width: 65ch; }
+.rich > p:not(h2 ~ p) { font-size: 1.16rem; line-height: 1.65; color: var(--text); }   /* the preamble */
+.rich > p:not(h2 ~ p):first-child::first-line { color: var(--amber); }
+.rich h2 {
+  clear: both; margin: 2.6em 0 .8em; padding-top: 1.4em; border-top: 1px solid var(--line);
+  font-size: clamp(1.05rem, 2.6vw, 1.35rem);
+}
+.rich blockquote {
+  display: flow-root;   /* shrinks beside a floated picture instead of running under it */
+  margin: 0 0 1.3em; padding: 14px 18px; background: var(--surface); border: 1px solid var(--line);
+  color: var(--text);
+}
+.rich blockquote p { margin: 0; }
+.rich blockquote p + p { margin-top: 6px; font: 400 .72rem/1.5 var(--mono); color: var(--muted); }
+.rich hr { margin: 2.6em 0 1.6em; border: 0; border-top: 1px solid var(--line); }
+
+.art { margin: 1.8em 0 2.2em; }
+.art:not(.art-side) { clear: both; }
+.art-paint img { width: 100%; border: 1px solid var(--line); background: var(--bg-deep); }
+.art-px img {   /* pixel art: native size times a whole number, edges kept hard */
+  width: calc(var(--w) * var(--scale) * 1px); max-width: none; height: auto; image-rendering: pixelated;
+}
+.art-stage, .art-px .art-set, .art-cutout .art-set {
+  border: 1px solid var(--line);
+  background: radial-gradient(70% 90% at 50% 100%, rgba(255,184,77,.07), transparent 70%), var(--surface);
+}
+.art-stage { display: grid; place-items: center; padding: 20px; }
+.prose .art-set { margin: 0; padding: 0; list-style: none; }
+.prose .art-set li { margin: 0; padding: 0; }
+.art-px .art-set {
+  display: flex; flex-wrap: wrap; justify-content: center; align-items: flex-end; gap: 18px; padding: 22px 16px 16px;
+}
+.art-px .art-set li { display: grid; justify-items: center; gap: 8px; }
+.art-paint .art-set { display: grid; grid-template-columns: repeat(var(--cols), minmax(0, 1fr)); align-items: end; gap: 12px; }
+.art-paint .art-set li { display: grid; gap: 6px; }
+.art-cutout .art-set { padding: 20px 16px 14px; gap: 12px 20px; }
+/* fit="height": one row, every picture the same height; each item's share of the row is its width/height ratio */
+.art-fit-h .art-set { display: flex; align-items: flex-start; }
+.art-fit-h .art-set li { flex: var(--ar) 1 0; min-width: 0; }   /* figures cut out of their background stand on a stage */
+.art-cutout img { border: 0; background: none; }
+.art-cutout .art-stage { padding: 16px 16px 0; }
+.art-cutout .art-stage img { width: auto; max-height: 440px; }
+.art-label {
+  font: 400 .64rem/1.3 var(--mono); color: var(--muted); text-transform: uppercase; letter-spacing: .06em;
+  text-align: center; text-wrap: balance;
+}
+.art-paint .art-label { text-align: left; }
+.art-cutout .art-label { text-align: center; }
+/* Picture-beside-text blocks (art-rows.html): a monster, a room, a place. */
+.art-rows { clear: both; display: grid; gap: 34px; margin: 1.8em 0 2.4em; }
+.art-row { display: grid; grid-template-columns: var(--media) minmax(0, 1fr); gap: 16px 28px; align-items: start; }
+.art-row-media.art-px .art-stage { min-height: 100%; }
+.art-row-body { max-width: 62ch; }
+.art-row-body p { margin: 0 0 .9em; }
+.art-row-body blockquote { margin-top: 1em; }
+.rich h3 {
+  clear: both; margin: 0 0 .55em; font: 700 .98rem/1.3 var(--display); letter-spacing: .04em;
+  text-transform: uppercase; color: var(--mint);
+}
+.rich > h3 { margin-top: 1.8em; }
+.art-row-body h3 { clear: none; }
+
+/* Hero-change tables: skill, before, after. */
+.rich table { width: 100%; max-width: 65ch; margin: .2em 0 1em; border-collapse: collapse; table-layout: fixed; font-size: .95rem; }
+.rich th:first-child { width: 30%; }
+.rich th, .rich td { padding: 9px 12px 9px 0; border-bottom: 1px solid var(--line); text-align: left; vertical-align: top; overflow-wrap: anywhere; }
+.rich th { font: 500 .66rem/1.4 var(--mono); text-transform: uppercase; letter-spacing: .1em; color: var(--muted); }
+.rich td:first-child { font-weight: 600; }
+.rich td:last-child { color: var(--amber); }
+.rich .why { color: var(--muted); }
+
+.art-missing { padding: 12px 14px; border: 1px solid var(--danger); color: var(--danger); font: 400 .8rem/1.4 var(--mono); }
+@media (min-width: 760px) {
+  .art-side { float: right; width: min(32%, 240px); margin: .4em 0 1.2em 32px; }
+  .art-side.art-cutout .art-stage img { max-height: 340px; }
+  .art-side-wide { width: min(42%, 360px); }
+  .art-side-wide.art-cutout .art-stage img { max-height: 620px; }
+}
+@media (max-width: 620px) {
+  .art-px img { width: calc(var(--w) * var(--scale-sm) * 1px); }
+  .art-paint .art-set { grid-template-columns: repeat(var(--cols-sm), minmax(0, 1fr)); }
+  .art-fit-h .art-set { gap: 10px; }
+  .art-px .art-set { gap: 14px 18px; }
+  .art-row { grid-template-columns: minmax(0, 1fr); }
+  .art-row-media.art-paint img { max-width: 420px; }
+  .rich th, .rich td { padding-right: 8px; font-size: .9rem; }
+  .banner-frame img { max-height: none; width: 100%; }
+  .rich > p:not(h2 ~ p) { font-size: 1.08rem; }
+}
+
 /* ---------- footer ---------- */
 footer { padding-block: 40px 56px; color: var(--muted); font-size: .9rem; }
 footer .wrap { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 20px; }

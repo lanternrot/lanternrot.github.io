@@ -1,0 +1,8 @@
+{%- comment -%}
+The URL path of a news post's art, for figure.html and art-strip.html. Use it with capture:
+  {% capture art_src %}{% include news-art-src.html src="ser_hagen.webp" %}{% endcapture %}
+A bare file name resolves to the post's art folder, /assets/img/news/<page.version>/; a path that
+starts with / is kept as is.
+{%- endcomment -%}
+{%- assign news_art_first = include.src | slice: 0 -%}
+{%- if news_art_first == "/" -%}{{ include.src }}{%- else -%}/assets/img/news/{{ page.version }}/{{ include.src }}{%- endif -%}

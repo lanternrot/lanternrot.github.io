@@ -1,0 +1,166 @@
+{
+  "/assets/img/news/4.8.0/banner.webp": {
+    "width": 1400,
+    "height": 781,
+    "kind": "painted"
+  },
+  "/assets/img/news/4.8.0/candle_chapel.webp": {
+    "width": 600,
+    "height": 600,
+    "kind": "painted"
+  },
+  "/assets/img/news/4.8.0/card_bell_pit.webp": {
+    "width": 560,
+    "height": 313,
+    "kind": "painted"
+  },
+  "/assets/img/news/4.8.0/card_echoing_caverns.webp": {
+    "width": 560,
+    "height": 313,
+    "kind": "painted"
+  },
+  "/assets/img/news/4.8.0/card_janxier_floodplain.webp": {
+    "width": 560,
+    "height": 313,
+    "kind": "painted"
+  },
+  "/assets/img/news/4.8.0/card_old_fort_calindash.webp": {
+    "width": 560,
+    "height": 313,
+    "kind": "painted"
+  },
+  "/assets/img/news/4.8.0/card_stormwind_peaks.webp": {
+    "width": 560,
+    "height": 313,
+    "kind": "painted"
+  },
+  "/assets/img/news/4.8.0/card_whispering_woods.webp": {
+    "width": 560,
+    "height": 313,
+    "kind": "painted"
+  },
+  "/assets/img/news/4.8.0/cinder_dryad.webp": {
+    "width": 128,
+    "height": 128,
+    "kind": "pixel"
+  },
+  "/assets/img/news/4.8.0/deep_ossuary.webp": {
+    "width": 600,
+    "height": 600,
+    "kind": "painted"
+  },
+  "/assets/img/news/4.8.0/embalmers_hall.webp": {
+    "width": 600,
+    "height": 600,
+    "kind": "painted"
+  },
+  "/assets/img/news/4.8.0/last_mourner.webp": {
+    "width": 600,
+    "height": 1171,
+    "kind": "painted",
+    "cutout": true
+  },
+  "/assets/img/news/4.8.0/necromancer.webp": {
+    "width": 128,
+    "height": 128,
+    "kind": "pixel"
+  },
+  "/assets/img/news/4.8.0/old_knell.webp": {
+    "width": 256,
+    "height": 256,
+    "kind": "pixel"
+  },
+  "/assets/img/news/4.8.0/phylactery.webp": {
+    "width": 128,
+    "height": 128,
+    "kind": "pixel"
+  },
+  "/assets/img/news/4.8.0/realm_aquarias.webp": {
+    "width": 560,
+    "height": 313,
+    "kind": "painted"
+  },
+  "/assets/img/news/4.8.0/realm_western_veros.webp": {
+    "width": 560,
+    "height": 313,
+    "kind": "painted"
+  },
+  "/assets/img/news/4.8.0/vigil_light.webp": {
+    "width": 128,
+    "height": 128,
+    "kind": "pixel"
+  },
+  "/assets/img/news/4.9.0/banner.webp": {
+    "width": 600,
+    "height": 460,
+    "kind": "painted"
+  },
+  "/assets/img/news/4.9.0/flick.webp": {
+    "width": 128,
+    "height": 128,
+    "kind": "pixel"
+  },
+  "/assets/img/news/4.9.0/flick_tale.webp": {
+    "width": 420,
+    "height": 936,
+    "kind": "painted",
+    "cutout": true
+  },
+  "/assets/img/news/4.9.0/landmark_event.webp": {
+    "width": 40,
+    "height": 50,
+    "kind": "pixel"
+  },
+  "/assets/img/news/4.9.0/landmark_exploration.webp": {
+    "width": 53,
+    "height": 37,
+    "kind": "pixel"
+  },
+  "/assets/img/news/4.9.0/landmark_fight.webp": {
+    "width": 54,
+    "height": 54,
+    "kind": "pixel"
+  },
+  "/assets/img/news/4.9.0/landmark_fight_cleared.webp": {
+    "width": 52,
+    "height": 54,
+    "kind": "pixel"
+  },
+  "/assets/img/news/4.9.0/landmark_obstacle.webp": {
+    "width": 58,
+    "height": 50,
+    "kind": "pixel"
+  },
+  "/assets/img/news/4.9.0/landmark_rival.webp": {
+    "width": 55,
+    "height": 56,
+    "kind": "pixel"
+  },
+  "/assets/img/news/4.9.0/landmark_shrine.webp": {
+    "width": 38,
+    "height": 45,
+    "kind": "pixel"
+  },
+  "/assets/img/news/4.9.0/merry_tel.webp": {
+    "width": 128,
+    "height": 128,
+    "kind": "pixel"
+  },
+  "/assets/img/news/4.9.0/merry_tel_tale.webp": {
+    "width": 420,
+    "height": 819,
+    "kind": "painted",
+    "cutout": true
+  },
+  "/assets/img/news/4.9.0/ser_hagen.webp": {
+    "width": 128,
+    "height": 128,
+    "kind": "pixel"
+  },
+  "/assets/img/news/4.9.0/ser_hagen_tale.webp": {
+    "width": 420,
+    "height": 1009,
+    "kind": "painted",
+    "cutout": true
+  }
+}
