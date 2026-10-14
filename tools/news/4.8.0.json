@@ -1,0 +1,178 @@
+{
+  "version": "4.8.0",
+  "release": "bef6ddc4",
+  "previous": "c7d44ea2",
+  "budget_kb": 1500,
+  "art": [
+    {
+      "name": "banner",
+      "src": "src/assets/maps/ancient_catacombs.webp",
+      "kind": "painted",
+      "expect": [
+        2752,
+        1536
+      ]
+    },
+    {
+      "name": "phylactery",
+      "src": "src/assets/enemies/phylactery.png",
+      "kind": "pixel",
+      "expect": [
+        128,
+        128
+      ]
+    },
+    {
+      "name": "necromancer",
+      "src": "src/assets/enemies/necromancer.png",
+      "kind": "pixel",
+      "expect": [
+        128,
+        128
+      ]
+    },
+    {
+      "name": "vigil_light",
+      "src": "src/assets/enemies/vigil_light.png",
+      "kind": "pixel",
+      "expect": [
+        128,
+        128
+      ]
+    },
+    {
+      "name": "deep_ossuary",
+      "src": "src/assets/battle_backgrounds/cata_deep_ossuary.png",
+      "kind": "painted",
+      "max_width": 400,
+      "expect": [
+        600,
+        1000
+      ]
+    },
+    {
+      "name": "embalmers_hall",
+      "src": "src/assets/battle_backgrounds/cata_embalmers_hall.png",
+      "kind": "painted",
+      "max_width": 400,
+      "expect": [
+        600,
+        1000
+      ]
+    },
+    {
+      "name": "candle_chapel",
+      "src": "src/assets/battle_backgrounds/cata_candle_chapel.png",
+      "kind": "painted",
+      "max_width": 400,
+      "expect": [
+        600,
+        1000
+      ]
+    },
+    {
+      "name": "last_mourner",
+      "src": "src/assets/npcs/tales/last_mourner.avif",
+      "kind": "painted",
+      "max_width": 420
+    },
+    {
+      "name": "old_knell",
+      "src": "src/assets/enemies/old_knell.png",
+      "kind": "pixel",
+      "expect": [
+        256,
+        256
+      ]
+    },
+    {
+      "name": "card_bell_pit",
+      "src": "src/assets/regions/paintings/bell_pit.webp",
+      "kind": "painted",
+      "expect": [
+        688,
+        384
+      ],
+      "max_width": 560
+    },
+    {
+      "name": "cinder_dryad",
+      "src": "src/assets/enemies/cinder_dryad.png",
+      "kind": "pixel",
+      "expect": [
+        128,
+        128
+      ]
+    },
+    {
+      "name": "card_whispering_woods",
+      "src": "src/assets/regions/paintings/whispering_woods.webp",
+      "kind": "painted",
+      "max_width": 560,
+      "expect": [
+        688,
+        384
+      ]
+    },
+    {
+      "name": "card_echoing_caverns",
+      "src": "src/assets/regions/paintings/echoing_caverns.webp",
+      "kind": "painted",
+      "max_width": 560,
+      "expect": [
+        688,
+        384
+      ]
+    },
+    {
+      "name": "card_stormwind_peaks",
+      "src": "src/assets/regions/paintings/stormwind_peaks.webp",
+      "kind": "painted",
+      "max_width": 560,
+      "expect": [
+        688,
+        384
+      ]
+    },
+    {
+      "name": "card_old_fort_calindash",
+      "src": "src/assets/regions/paintings/old_fort_calindash.webp",
+      "kind": "painted",
+      "max_width": 560,
+      "expect": [
+        688,
+        384
+      ]
+    },
+    {
+      "name": "card_janxier_floodplain",
+      "src": "src/assets/regions/paintings/janxier_floodplain.webp",
+      "kind": "painted",
+      "max_width": 560,
+      "expect": [
+        688,
+        384
+      ]
+    },
+    {
+      "name": "realm_western_veros",
+      "src": "src/assets/regions/realms/western_veros.webp",
+      "kind": "painted",
+      "max_width": 560,
+      "expect": [
+        688,
+        384
+      ]
+    },
+    {
+      "name": "realm_aquarias",
+      "src": "src/assets/regions/realms/aquarias.webp",
+      "kind": "painted",
+      "max_width": 560,
+      "expect": [
+        688,
+        384
+      ]
+    }
+  ]
+}

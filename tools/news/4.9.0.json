@@ -1,0 +1,22 @@
+{
+  "version": "4.9.0",
+  "release": "612f7392",
+  "previous": "bef6ddc4",
+  "budget_kb": 1500,
+  "art": [
+    { "name": "banner", "src": "src/assets/battle_backgrounds/cave_rival_01.png", "kind": "painted", "crop": [0, 140, 600, 460], "expect": [600, 1000] },
+    { "name": "ser_hagen_tale", "src": "src/assets/npcs/tales/ser_hagen.avif", "kind": "painted", "max_width": 420 },
+    { "name": "flick_tale", "src": "src/assets/npcs/tales/flick.avif", "kind": "painted", "max_width": 420 },
+    { "name": "merry_tel_tale", "src": "src/assets/npcs/tales/merry_tel.avif", "kind": "painted", "max_width": 420 },
+    { "name": "ser_hagen", "src": "src/assets/heroes/ser_hagen.png", "kind": "pixel", "expect": [128, 128] },
+    { "name": "flick", "src": "src/assets/heroes/flick.png", "kind": "pixel", "expect": [128, 128] },
+    { "name": "merry_tel", "src": "src/assets/heroes/merry_tel.png", "kind": "pixel", "expect": [128, 128] },
+    { "name": "landmark_fight", "src": "src/assets/map/landmarks/fight.png", "kind": "pixel" },
+    { "name": "landmark_fight_cleared", "src": "src/assets/map/landmarks/fight_cleared.png", "kind": "pixel" },
+    { "name": "landmark_event", "src": "src/assets/map/landmarks/event.png", "kind": "pixel" },
+    { "name": "landmark_exploration", "src": "src/assets/map/landmarks/exploration.png", "kind": "pixel" },
+    { "name": "landmark_obstacle", "src": "src/assets/map/landmarks/obstacle.png", "kind": "pixel" },
+    { "name": "landmark_rival", "src": "src/assets/map/landmarks/rival.png", "kind": "pixel" },
+    { "name": "landmark_shrine", "src": "src/assets/map/landmarks/shrine.png", "kind": "pixel" }
+  ]
+}
