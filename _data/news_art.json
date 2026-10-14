@@ -1,4 +1,131 @@
 {
+  "/assets/img/news/4.10.0/arm_severed.webp": {
+    "width": 48,
+    "height": 48,
+    "kind": "pixel"
+  },
+  "/assets/img/news/4.10.0/arm_whole.webp": {
+    "width": 48,
+    "height": 48,
+    "kind": "pixel"
+  },
+  "/assets/img/news/4.10.0/banner.webp": {
+    "width": 1400,
+    "height": 781,
+    "kind": "painted"
+  },
+  "/assets/img/news/4.10.0/blind_matriarch.webp": {
+    "width": 128,
+    "height": 128,
+    "kind": "pixel"
+  },
+  "/assets/img/news/4.10.0/brood_warrens.webp": {
+    "width": 600,
+    "height": 600,
+    "kind": "painted"
+  },
+  "/assets/img/news/4.10.0/drowned_choir.webp": {
+    "width": 420,
+    "height": 560,
+    "kind": "painted"
+  },
+  "/assets/img/news/4.10.0/drowned_mine.webp": {
+    "width": 600,
+    "height": 600,
+    "kind": "painted"
+  },
+  "/assets/img/news/4.10.0/gate_map.webp": {
+    "width": 1000,
+    "height": 747,
+    "kind": "painted"
+  },
+  "/assets/img/news/4.10.0/gatewarden.webp": {
+    "width": 128,
+    "height": 128,
+    "kind": "pixel"
+  },
+  "/assets/img/news/4.10.0/gatewardens_wall.webp": {
+    "width": 420,
+    "height": 560,
+    "kind": "painted"
+  },
+  "/assets/img/news/4.10.0/healing_down.webp": {
+    "width": 48,
+    "height": 48,
+    "kind": "pixel"
+  },
+  "/assets/img/news/4.10.0/held_ship.webp": {
+    "width": 420,
+    "height": 560,
+    "kind": "painted"
+  },
+  "/assets/img/news/4.10.0/kraken.webp": {
+    "width": 128,
+    "height": 128,
+    "kind": "pixel"
+  },
+  "/assets/img/news/4.10.0/kraken_arm.webp": {
+    "width": 128,
+    "height": 128,
+    "kind": "pixel"
+  },
+  "/assets/img/news/4.10.0/leech_falls.webp": {
+    "width": 600,
+    "height": 600,
+    "kind": "painted"
+  },
+  "/assets/img/news/4.10.0/listening_pools.webp": {
+    "width": 600,
+    "height": 600,
+    "kind": "painted"
+  },
+  "/assets/img/news/4.10.0/noise_loud.webp": {
+    "width": 48,
+    "height": 48,
+    "kind": "pixel"
+  },
+  "/assets/img/news/4.10.0/noise_sharp.webp": {
+    "width": 48,
+    "height": 48,
+    "kind": "pixel"
+  },
+  "/assets/img/news/4.10.0/noise_soft.webp": {
+    "width": 48,
+    "height": 48,
+    "kind": "pixel"
+  },
+  "/assets/img/news/4.10.0/orlo.webp": {
+    "width": 480,
+    "height": 520,
+    "kind": "painted",
+    "cutout": true
+  },
+  "/assets/img/news/4.10.0/pact_bound_bulwark.webp": {
+    "width": 128,
+    "height": 128,
+    "kind": "pixel"
+  },
+  "/assets/img/news/4.10.0/pact_bound_troll.webp": {
+    "width": 128,
+    "height": 128,
+    "kind": "pixel"
+  },
+  "/assets/img/news/4.10.0/swamp_hag.webp": {
+    "width": 128,
+    "height": 128,
+    "kind": "pixel"
+  },
+  "/assets/img/news/4.10.0/thessaly.webp": {
+    "width": 480,
+    "height": 467,
+    "kind": "painted",
+    "cutout": true
+  },
+  "/assets/img/news/4.10.0/tide_priest.webp": {
+    "width": 128,
+    "height": 128,
+    "kind": "pixel"
+  },
   "/assets/img/news/4.8.0/banner.webp": {
     "width": 1400,
     "height": 781,

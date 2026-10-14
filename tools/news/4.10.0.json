@@ -1,0 +1,33 @@
+{
+  "version": "4.10.0",
+  "release": "74a4ba27",
+  "previous": "612f7392",
+  "budget_kb": 1500,
+  "art": [
+    { "name": "banner", "src": "src/assets/maps/underground_morass.webp", "kind": "painted", "expect": [2752, 1536] },
+    { "name": "listening_pools", "src": "src/assets/battle_backgrounds/morass_listening_pools.png", "kind": "painted", "max_width": 600, "expect": [600, 1000], "crop": [0, 200, 600, 600] },
+    { "name": "leech_falls", "src": "src/assets/battle_backgrounds/morass_leech_falls.png", "kind": "painted", "max_width": 600, "expect": [600, 1000], "crop": [0, 150, 600, 600] },
+    { "name": "drowned_mine", "src": "src/assets/battle_backgrounds/morass_drowned_mine.png", "kind": "painted", "max_width": 600, "expect": [600, 1000], "crop": [0, 150, 600, 600] },
+    { "name": "brood_warrens", "src": "src/assets/battle_backgrounds/morass_brood.png", "kind": "painted", "max_width": 600, "expect": [600, 1000], "crop": [0, 200, 600, 600] },
+    { "name": "noise_soft", "src": "src/assets/icons/noise_soft.png", "kind": "pixel", "expect": [48, 48] },
+    { "name": "noise_sharp", "src": "src/assets/icons/noise_sharp.png", "kind": "pixel", "expect": [48, 48] },
+    { "name": "noise_loud", "src": "src/assets/icons/noise_loud.png", "kind": "pixel", "expect": [48, 48] },
+    { "name": "swamp_hag", "src": "src/assets/enemies/swamp_hag.png", "kind": "pixel", "expect": [128, 128] },
+    { "name": "blind_matriarch", "src": "src/assets/enemies/blind_matriarch.png", "kind": "pixel", "expect": [128, 128] },
+    { "name": "orlo", "src": "src/assets/npcs/tales/orlo.avif", "kind": "painted", "max_width": 480 },
+    { "name": "gate_map", "src": "src/assets/maps/gate_to_aquaria.webp", "kind": "painted", "max_width": 1000, "expect": [2400, 1792] },
+    { "name": "kraken_arm", "src": "src/assets/enemies/kraken_arm.png", "kind": "pixel", "expect": [128, 128] },
+    { "name": "gatewarden", "src": "src/assets/enemies/gatewarden.png", "kind": "pixel", "expect": [128, 128] },
+    { "name": "kraken", "src": "src/assets/enemies/kraken.png", "kind": "pixel", "expect": [128, 128] },
+    { "name": "tide_priest", "src": "src/assets/enemies/tide_priest.png", "kind": "pixel", "expect": [128, 128] },
+    { "name": "arm_whole", "src": "src/assets/icons/node_arm_whole.png", "kind": "pixel", "expect": [48, 48] },
+    { "name": "arm_severed", "src": "src/assets/icons/node_arm_severed.png", "kind": "pixel", "expect": [48, 48] },
+    { "name": "held_ship", "src": "src/assets/battle_backgrounds/aqua_wreck.png", "kind": "painted", "max_width": 420, "expect": [600, 1000], "crop": [0, 100, 600, 800] },
+    { "name": "drowned_choir", "src": "src/assets/battle_backgrounds/aqua_choir.png", "kind": "painted", "max_width": 420, "expect": [600, 1000], "crop": [0, 100, 600, 800] },
+    { "name": "gatewardens_wall", "src": "src/assets/battle_backgrounds/aqua_wall.png", "kind": "painted", "max_width": 420, "expect": [600, 1000], "crop": [0, 100, 600, 800] },
+    { "name": "thessaly", "src": "src/assets/npcs/tales/thessaly.avif", "kind": "painted", "max_width": 480 },
+    { "name": "healing_down", "src": "src/assets/icons/effect_healing_down.png", "kind": "pixel", "expect": [48, 48] },
+    { "name": "pact_bound_bulwark", "src": "src/assets/enemies/pact_bound_bulwark.png", "kind": "pixel", "expect": [128, 128] },
+    { "name": "pact_bound_troll", "src": "src/assets/enemies/pact_bound_troll.png", "kind": "pixel", "expect": [128, 128] }
+  ]
+}
