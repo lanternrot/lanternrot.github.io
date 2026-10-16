@@ -1,0 +1,15 @@
+{
+  "version": "4.11.0",
+  "release": "0bb87b4d",
+  "previous": "74a4ba27",
+  "budget_kb": 1500,
+  "art": [
+    { "name": "banner", "src": "src/assets/action_bar/book_turn.png", "kind": "pixel", "expect": [408, 112] },
+    { "name": "plate_r1", "src": "src/assets/hero_plates/plate_r1.png", "kind": "pixel", "expect": [80, 56] },
+    { "name": "plate_r2", "src": "src/assets/hero_plates/plate_r2.png", "kind": "pixel", "expect": [80, 56] },
+    { "name": "plate_r3", "src": "src/assets/hero_plates/plate_r3.png", "kind": "pixel", "expect": [80, 56] },
+    { "name": "plate_r4", "src": "src/assets/hero_plates/plate_r4.png", "kind": "pixel", "expect": [80, 56] },
+    { "name": "plate_r5", "src": "src/assets/hero_plates/plate_r5.png", "kind": "pixel", "expect": [80, 56] },
+    { "name": "plate_r4_current", "src": "src/assets/hero_plates/plate_r4_current.png", "kind": "pixel", "expect": [80, 56] }
+  ]
+}
