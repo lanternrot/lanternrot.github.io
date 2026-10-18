@@ -163,6 +163,19 @@ class TestValidation(Fixture):
             self.spec({"name": "old", "src": "src/assets/heroes/old.png", "kind": "pixel"}),
             r"old\.png.*not added or changed")
 
+    def test_art_not_changed_in_this_release_builds_with_an_earlier_art_reason(self):
+        self.build(self.spec({"name": "old", "src": "src/assets/heroes/old.png", "kind": "pixel",
+                              "earlier_art": "Patrick, 2026-10-17: no art shipped"}))
+        self.assertEqual(opened(self.out("old")).size, (64, 64))
+
+    def test_blank_earlier_art_reason_fails(self):
+        for reason in ("", "  ", True):
+            with self.subTest(reason=reason):
+                self.assertFailsWithoutWriting(
+                    self.spec({"name": "old", "src": "src/assets/heroes/old.png", "kind": "pixel",
+                               "earlier_art": reason}),
+                    r"old: earlier_art needs a reason")
+
     def test_expect_size_mismatch_fails(self):
         self.assertFailsWithoutWriting(
             self.spec({"name": "hero", "src": "src/assets/heroes/hero.png", "kind": "pixel", "expect": [64, 64]}),

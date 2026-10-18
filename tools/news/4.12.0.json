@@ -1,0 +1,10 @@
+{
+  "version": "4.12.0",
+  "release": "4a85f59e",
+  "previous": "0bb87b4d",
+  "budget_kb": 1500,
+  "art": [
+    { "name": "banner", "src": "src/assets/heroes/tales/oskar_bitter_watch.avif", "kind": "painted", "expect": [800, 1600], "crop": [0, 0, 800, 800], "max_width": 800,
+      "earlier_art": "Patrick, 2026-10-17: 4.12.0 shipped no art; Oskar's rework leads the patch, so his tale painting is the banner" }
+  ]
+}

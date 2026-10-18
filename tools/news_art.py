@@ -17,7 +17,8 @@ Reads a spec (JSON) that names the release, the release before it, and the art t
 
 Each source is read from the release commit (not the working tree) and must be one the
 release added or changed (`git diff previous release -- <src>`), so a post only shows art
-that shipped in that release.
+that shipped in that release. The one exception is an item with `earlier_art` set to who
+allowed older art and why (4.12.0 shipped none, so Patrick OK'd Oskar's painting as its banner).
 
   painted: lossy webp (quality, default 85), cropped first if `crop` ([x, y, w, h]) is set,
            then shrunk to `max_width` (default 1400). Never upscaled.
@@ -79,6 +80,10 @@ def check_spec(spec):
         if item["name"] in seen:
             raise NewsArtError(f"duplicate art name '{item['name']}'")
         seen.add(item["name"])
+        if "earlier_art" in item:
+            reason = item["earlier_art"]
+            if not isinstance(reason, str) or not reason.strip():
+                raise NewsArtError(f"{item['name']}: earlier_art needs a reason (who allowed it, and why)")
 
 
 def convert(item, data):
@@ -122,7 +127,7 @@ def build(spec, dorf, site):
     outputs = []
     for item in spec["art"]:
         src = item["src"]
-        if src not in shipped:
+        if src not in shipped and "earlier_art" not in item:
             raise NewsArtError(f"{item['name']}: {src} was not added or changed between "
                                f"{previous} and {release}, so it didn't ship in {version}")
         try:
