@@ -1,0 +1,14 @@
+{
+  "version": "4.12.1",
+  "release": "57e045f8",
+  "previous": "4a85f59e",
+  "budget_kb": 1500,
+  "art": [
+    { "name": "banner", "src": "src/assets/heroes/tales/selwyn.avif", "kind": "painted", "expect": [842, 1600], "crop": [0, 0, 842, 842], "max_width": 800 },
+    { "name": "selwyn", "src": "src/assets/heroes/selwyn.png", "kind": "pixel", "expect": [128, 128] },
+    { "name": "other_selwyn", "src": "src/assets/heroes/other_selwyn.png", "kind": "pixel", "expect": [128, 128] },
+    { "name": "selwyn_attack", "src": "src/assets/heroes/poses/selwyn_attack.png", "kind": "pixel", "expect": [128, 128] },
+    { "name": "tern_dive", "src": "src/assets/minigames/fishing/bird_dive.png", "kind": "pixel", "expect": [320, 80] },
+    { "name": "line_snap", "src": "src/assets/minigames/fishing/line_snap.png", "kind": "pixel", "expect": [252, 36] }
+  ]
+}

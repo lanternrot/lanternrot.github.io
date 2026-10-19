@@ -167,6 +167,37 @@
     "kind": "painted",
     "cutout": true
   },
+  "/assets/img/news/4.12.1/banner.webp": {
+    "width": 800,
+    "height": 800,
+    "kind": "painted",
+    "cutout": true
+  },
+  "/assets/img/news/4.12.1/line_snap.webp": {
+    "width": 252,
+    "height": 36,
+    "kind": "pixel"
+  },
+  "/assets/img/news/4.12.1/other_selwyn.webp": {
+    "width": 128,
+    "height": 128,
+    "kind": "pixel"
+  },
+  "/assets/img/news/4.12.1/selwyn.webp": {
+    "width": 128,
+    "height": 128,
+    "kind": "pixel"
+  },
+  "/assets/img/news/4.12.1/selwyn_attack.webp": {
+    "width": 128,
+    "height": 128,
+    "kind": "pixel"
+  },
+  "/assets/img/news/4.12.1/tern_dive.webp": {
+    "width": 320,
+    "height": 80,
+    "kind": "pixel"
+  },
   "/assets/img/news/4.8.0/banner.webp": {
     "width": 1400,
     "height": 781,
