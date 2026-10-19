@@ -1,7 +1,7 @@
 // Lantern Rot site scripts. Each feature looks for its own elements and quietly
 // skips itself on pages that don't have them (the news pages have no hero).
 // The testable logic lives in ./logic.js.
-import { submitBeta, parseVersion, chipSegments, errorMessage } from "./logic.js";
+import { submitBeta, submitChatGameRequest, parseVersion, chipSegments, errorMessage } from "./logic.js";
 
 const VERSION_URL = "https://raw.githubusercontent.com/Deltran/dorf/main/version.txt";
 const VERSION_TIMEOUT_MS = 6000;
@@ -65,16 +65,18 @@ function initSpotlight() {
   });
 }
 
-// Beta form: a real submission. The success block shows only when Web3Forms
-// said success; every other outcome shows the error block, keeps the answers,
-// and logs the reason to the console.
-function initBetaForm() {
-  const form = document.getElementById("beta-form");
+// A request form is a real submission. The success block shows only when
+// Web3Forms said success; every other outcome shows the error block, keeps the
+// answers, and logs the reason to the console. The form's elements follow one
+// id scheme: `${prefix}-ok`, `-bad`, `-bad-msg`, `-send`, `-addr`.
+// `answers(fields)` reads the form; `submit` is the matching logic.js sender.
+function wireRequestForm({ formId, prefix, label, submit, answers }) {
+  const form = document.getElementById(formId);
   if (!form) return;
-  const ok = document.getElementById("b-ok");
-  const bad = document.getElementById("b-bad");
-  const badMessage = document.getElementById("b-bad-msg");
-  const send = document.getElementById("b-send");
+  const ok = document.getElementById(`${prefix}-ok`);
+  const bad = document.getElementById(`${prefix}-bad`);
+  const badMessage = document.getElementById(`${prefix}-bad-msg`);
+  const send = document.getElementById(`${prefix}-send`);
   const fields = form.elements;
 
   form.addEventListener("submit", async e => {
@@ -85,29 +87,51 @@ function initBetaForm() {
     send.textContent = "Sending…";
     let result;
     try {
-      result = await submitBeta({
+      result = await submit({
         fetchImpl: (...args) => fetch(...args),
         accessKey: form.dataset.accessKey,
-        email: fields.email.value,
-        phone: fields.phone.value,
-        where: fields.where.value,
-        news: fields.news.checked,
         botcheck: fields.botcheck.checked,
-        now: new Date()
+        email: fields.email.value,
+        ...answers(fields)
       });
     } finally {
       send.disabled = false;
       send.textContent = "Send request";
     }
     if (result.ok) {
-      document.getElementById("b-addr").textContent = fields.email.value;
+      document.getElementById(`${prefix}-addr`).textContent = fields.email.value;
       form.hidden = true;
       ok.hidden = false;
       return;
     }
-    console.error(`Beta request not sent (${result.kind}): ${result.reason}`);
+    console.error(`${label} not sent (${result.kind}): ${result.reason}`);
     badMessage.textContent = errorMessage(result.kind);
     bad.hidden = false;
+  });
+}
+
+function initBetaForm() {
+  wireRequestForm({
+    formId: "beta-form",
+    prefix: "b",
+    label: "Beta request",
+    submit: submitBeta,
+    answers: fields => ({
+      phone: fields.phone.value,
+      where: fields.where.value,
+      news: fields.news.checked,
+      now: new Date()
+    })
+  });
+}
+
+function initChatGameForm() {
+  wireRequestForm({
+    formId: "cg-form",
+    prefix: "cg",
+    label: "Chat game request",
+    submit: submitChatGameRequest,
+    answers: fields => ({ channel: fields.channel.value, idea: fields.idea.value })
   });
 }
 
@@ -223,5 +247,6 @@ initWordmark();
 initLantern();
 initSpotlight();
 initBetaForm();
+initChatGameForm();
 initChip();
 initRotGrid();

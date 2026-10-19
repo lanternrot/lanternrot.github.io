@@ -190,6 +190,8 @@ textarea { min-height: 76px; resize: vertical; }
 .check input:focus-visible { outline: 2px solid var(--amber); outline-offset: 3px; box-shadow: none; }
 input:focus, textarea:focus { outline: none; border-color: var(--mint); box-shadow: 0 0 0 1px var(--mint); }
 input:user-invalid { border-color: var(--danger); }
+/* the chat game request sits under the bento, so it gets the bento's gap */
+.cg-ask { margin-top: 20px; max-width: 720px; }
 .form-foot { display: flex; flex-wrap: wrap; align-items: center; gap: 12px 18px; }
 .form-foot small { color: var(--muted); font-size: .8rem; max-width: 26em; }
 .pill[disabled] { opacity: .6; cursor: progress; }

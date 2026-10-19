@@ -79,9 +79,7 @@ dorf_description: "A dark-fantasy hero battler for Android. Summon heroes, build
             <span>Also send me Lantern Rot news</span>
             <span class="opt">rarely</span>
           </label>
-          <div class="hp" aria-hidden="true">
-            <input type="checkbox" name="botcheck" tabindex="-1" autocomplete="off">
-          </div>
+          {% include honeypot.html %}
           <div class="form-foot">
             <button class="pill" type="submit" id="b-send">Send request</button>
             <small>Android only. Your email gets beta messages, and news only if you ticked the box. The box doesn't affect your request.</small>
@@ -130,6 +128,28 @@ dorf_description: "A dark-fantasy hero battler for Android. Summon heroes, build
           <img src="/assets/img/wizards-grimoire.webp" alt="An on-stream book card titled The Bear Who Carried Shells" width="1200" height="750" loading="lazy">
           <div class="body"><span class="kind">channel-point redeem</span><h3>Wizard's Grimoire</h3><p>A redeem opens a book on stream with a real entry from history, science or words.</p></div>
         </article>
+      </div>
+      <div class="tile form-tile rotting cg-ask" id="chat-game-request">
+        <h3>Want one for your channel?</h3>
+        <p class="intro">I build these one channel at a time, around the people who watch it. Tell me about yours and what you'd like chat to do.</p>
+        <form id="cg-form" novalidate data-access-key="{{ site.web3forms_access_key }}">
+          <label for="cg-email">Email
+            <input id="cg-email" name="email" type="email" autocomplete="email" required placeholder="you@example.com">
+          </label>
+          <label for="cg-channel">Twitch channel
+            <input id="cg-channel" name="channel" type="text" required placeholder="Your channel name or twitch.tv link">
+          </label>
+          <label for="cg-idea">What do you have in mind? <span class="opt">optional</span>
+            <textarea id="cg-idea" name="idea" placeholder="Not sure yet is fine."></textarea>
+          </label>
+          {% include honeypot.html %}
+          <div class="form-foot">
+            <button class="pill" type="submit" id="cg-send">Send request</button>
+            <small>Your email is only used to answer this request.</small>
+          </div>
+        </form>
+        <div class="result ok" id="cg-ok" hidden role="status"><b>Request received</b>I'll write back to <span id="cg-addr"></span>.</div>
+        <div class="result bad" id="cg-bad" hidden role="alert"><b>Request didn't send</b><span id="cg-bad-msg"></span></div>
       </div>
     </div>
   </section>
