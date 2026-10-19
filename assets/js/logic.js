@@ -2,20 +2,37 @@
 
 export const SUBMIT_URL = "https://api.web3forms.com/submit";
 
+/** The fields every request carries; the subject is what tells them apart in the inbox. */
+function basePayload({ accessKey, subject, email, botcheck }) {
+  const payload = {
+    access_key: accessKey,
+    subject,
+    from_name: "lanternrot.com",
+    email: email.trim(),
+  };
+  if (botcheck) payload.botcheck = true;
+  return payload;
+}
+
 /** The JSON body Web3Forms expects for a beta request. */
 export function buildPayload({ accessKey, email, phone, where, news, botcheck, now }) {
   const payload = {
-    access_key: accessKey,
-    subject: "Dorf beta request",
-    from_name: "lanternrot.com",
-    email: email.trim(),
+    ...basePayload({ accessKey, subject: "Dorf beta request", email, botcheck }),
     phone: phone.trim(),
     where: where.trim(),
     news: news ? "yes" : "no",
   };
   if (news) payload.news_opt_in_at = now.toISOString();
-  if (botcheck) payload.botcheck = true;
   return payload;
+}
+
+/** The JSON body Web3Forms expects for a chat game request. */
+export function buildChatGamePayload({ accessKey, email, channel, idea, botcheck }) {
+  return {
+    ...basePayload({ accessKey, subject: "Chat game request", email, botcheck }),
+    channel: channel.trim(),
+    idea: idea.trim(),
+  };
 }
 
 /** True while the access key is missing or still the "paste it here" stand-in. */
@@ -50,12 +67,12 @@ export function interpretResponse(status, bodyText) {
 }
 
 /**
- * Sends a beta request. Resolves to `{ ok: true }` or
+ * Sends a request built by `buildBody`. Resolves to `{ ok: true }` or
  * `{ ok: false, kind, reason }`; it never throws and never claims success it
  * didn't see. `kind` is one of not-connected, network, http, bad-response,
  * rejected, so the page can word the error and the console gets `reason`.
  */
-export async function submitBeta({ fetchImpl, accessKey, now, ...answers }) {
+async function submitRequest(buildBody, { fetchImpl, accessKey, ...answers }) {
   if (isPlaceholderKey(accessKey)) {
     return {
       ok: false,
@@ -67,13 +84,19 @@ export async function submitBeta({ fetchImpl, accessKey, now, ...answers }) {
     const response = await fetchImpl(SUBMIT_URL, {
       method: "POST",
       headers: { "Content-Type": "application/json", Accept: "application/json" },
-      body: JSON.stringify(buildPayload({ accessKey, now, ...answers })),
+      body: JSON.stringify(buildBody({ accessKey, ...answers })),
     });
     return interpretResponse(response.status, await response.text());
   } catch (error) {
     return { ok: false, kind: "network", reason: `Could not reach Web3Forms: ${error.message}` };
   }
 }
+
+/** Sends a beta request (see submitRequest for the result shape). */
+export const submitBeta = args => submitRequest(buildPayload, args);
+
+/** Sends a chat game request (see submitRequest for the result shape). */
+export const submitChatGameRequest = args => submitRequest(buildChatGamePayload, args);
 
 const VERSION = /^v?(\d{1,6}\.\d{1,6}\.\d{1,6}(?:[-+][0-9A-Za-z.-]{1,32})?)$/;
 

@@ -1,0 +1,8 @@
+# The studio's profile pages. The footer's "Elsewhere" links and the JSON-LD
+# sameAs list both read this file, in this order.
+- name: YouTube
+  url: https://www.youtube.com/@lanternrotsoftware
+- name: Bluesky
+  url: https://bsky.app/profile/lanternrot.com
+- name: itch.io
+  url: https://lanternrot.itch.io
