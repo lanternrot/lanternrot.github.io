@@ -1,0 +1,49 @@
+{%- comment -%}
+  Site-wide JSON-LD: the studio (Organization) and the site (WebSite) on every
+  page, plus Dorf (VideoGame) on the homepage only, where its copy lives.
+  Entities point at each other by @id. Facts come from _config.yml, _data/profiles.yml
+  and the Dorf description in index.html front matter; keep them in step with those.
+{%- endcomment -%}
+{%- assign org_id = site.url | append: "/#organization" -%}
+{%- assign profile_urls = site.data.profiles | map: "url" -%}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": {{ org_id | jsonify }},
+      "name": {{ site.title | jsonify }},
+      "url": {{ site.url | jsonify }},
+      "logo": {{ "/assets/img/icon-512.png" | absolute_url | jsonify }},
+      "description": {{ site.description | jsonify }},
+      "sameAs": {{ profile_urls | jsonify }}
+    },
+    {
+      "@type": "WebSite",
+      "@id": {{ site.url | append: "/#website" | jsonify }},
+      "name": {{ site.title | jsonify }},
+      "url": {{ site.url | jsonify }},
+      "publisher": { "@id": {{ org_id | jsonify }} }
+    }
+    {%- if page.url == "/" -%}
+    ,
+    {
+      "@type": "VideoGame",
+      "@id": {{ site.url | append: "/#dorf" | jsonify }},
+      "name": "Dorf",
+      "alternateName": "Domains of Relentless Fighting",
+      "description": {{ page.dorf_description | jsonify }},
+      "url": {{ site.url | append: "/#dorf" | jsonify }},
+      "image": {{ "/assets/img/dorf-logo.webp" | absolute_url | jsonify }},
+      "applicationCategory": "Game",
+      "operatingSystem": "Android",
+      "gamePlatform": "Android",
+      "author": { "@id": {{ org_id | jsonify }} },
+      "publisher": { "@id": {{ org_id | jsonify }} },
+      "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
+    }
+    {%- endif %}
+  ]
+}
+</script>

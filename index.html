@@ -1,5 +1,7 @@
 ---
 layout: default
+# Shown in the Dorf tile and reused as the VideoGame description in the JSON-LD.
+dorf_description: "A dark-fantasy hero battler for Android. Summon heroes, build a party of four, and fight your way through turn-based battles, rival parties and the things at the bottom of the Bell Pit."
 ---
 {%- assign latest = site.posts.first %}
 <header class="hero">
@@ -33,7 +35,7 @@ layout: default
           <h2 style="margin:0"><img class="logo" src="/assets/img/dorf-logo.webp" alt="Dorf" width="900" height="362"></h2>
           <img class="sub" src="/assets/img/dorf-subtitle.webp" alt="Domains of Relentless Fighting" width="1000" height="64">
           <p class="tagline">Adventurers wanted. No pay. Frequent death.</p>
-          <p style="margin:0;color:var(--muted)">A dark-fantasy hero battler for Android. Summon heroes, build a party of four, and fight your way through turn-based battles, rival parties and the things at the bottom of the Bell Pit.</p>
+          <p style="margin:0;color:var(--muted)">{{ page.dorf_description }}</p>
           <ul class="facts">
             <li>Over 70 heroes across 9 classes</li>
             <li>Summon banners with a pity system</li>
