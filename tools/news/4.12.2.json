@@ -1,0 +1,20 @@
+{
+  "version": "4.12.2",
+  "release": "18f747ca",
+  "previous": "57e045f8",
+  "budget_kb": 1500,
+  "art": [
+    { "name": "banner", "src": "src/assets/heroes/tales/attack/ember_witch.avif", "kind": "painted", "expect": [1200, 1200], "max_width": 800 },
+    { "name": "aurora_attack", "src": "src/assets/heroes/tales/attack/aurora_the_dawn.avif", "kind": "painted", "expect": [1200, 1200], "max_width": 480 },
+    { "name": "shadow_king_attack", "src": "src/assets/heroes/tales/attack/shadow_king.avif", "kind": "painted", "expect": [1200, 1200], "max_width": 480 },
+    { "name": "yggra_attack", "src": "src/assets/heroes/tales/attack/yggra_world_root.avif", "kind": "painted", "expect": [1200, 1200], "max_width": 480 },
+    { "name": "gallan_attack", "src": "src/assets/heroes/tales/attack/sir_gallan.avif", "kind": "painted", "expect": [1200, 1200], "max_width": 480 },
+    { "name": "harl_attack", "src": "src/assets/heroes/tales/attack/wandering_bard.avif", "kind": "painted", "expect": [1200, 1200], "max_width": 480 },
+    { "name": "swift_arrow_attack", "src": "src/assets/heroes/tales/attack/swift_arrow.avif", "kind": "painted", "expect": [1200, 1200], "max_width": 480 },
+    { "name": "shadow_dragon", "src": "src/assets/enemies/shadow_dragon.png", "kind": "pixel", "expect": [256, 256] },
+    { "name": "storm_elemental", "src": "src/assets/enemies/storm_elemental.png", "kind": "pixel", "expect": [128, 128] },
+    { "name": "mountain_giant", "src": "src/assets/enemies/mountain_giant.png", "kind": "pixel", "expect": [256, 256] },
+    { "name": "ser_hagen_tale", "src": "src/assets/npcs/tales/ser_hagen.avif", "kind": "painted", "expect": [667, 1600], "max_width": 360 },
+    { "name": "rosara_tale", "src": "src/assets/heroes/tales/rosara_the_unmoved.avif", "kind": "painted", "expect": [1061, 1600], "max_width": 560 }
+  ]
+}
