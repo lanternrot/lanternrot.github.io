@@ -198,6 +198,75 @@
     "height": 80,
     "kind": "pixel"
   },
+  "/assets/img/news/4.12.2/aurora_attack.webp": {
+    "width": 480,
+    "height": 480,
+    "kind": "painted",
+    "cutout": true
+  },
+  "/assets/img/news/4.12.2/banner.webp": {
+    "width": 800,
+    "height": 800,
+    "kind": "painted",
+    "cutout": true
+  },
+  "/assets/img/news/4.12.2/gallan_attack.webp": {
+    "width": 480,
+    "height": 480,
+    "kind": "painted",
+    "cutout": true
+  },
+  "/assets/img/news/4.12.2/harl_attack.webp": {
+    "width": 480,
+    "height": 480,
+    "kind": "painted",
+    "cutout": true
+  },
+  "/assets/img/news/4.12.2/mountain_giant.webp": {
+    "width": 256,
+    "height": 256,
+    "kind": "pixel"
+  },
+  "/assets/img/news/4.12.2/rosara_tale.webp": {
+    "width": 560,
+    "height": 844,
+    "kind": "painted",
+    "cutout": true
+  },
+  "/assets/img/news/4.12.2/ser_hagen_tale.webp": {
+    "width": 360,
+    "height": 864,
+    "kind": "painted",
+    "cutout": true
+  },
+  "/assets/img/news/4.12.2/shadow_dragon.webp": {
+    "width": 256,
+    "height": 256,
+    "kind": "pixel"
+  },
+  "/assets/img/news/4.12.2/shadow_king_attack.webp": {
+    "width": 480,
+    "height": 480,
+    "kind": "painted",
+    "cutout": true
+  },
+  "/assets/img/news/4.12.2/storm_elemental.webp": {
+    "width": 128,
+    "height": 128,
+    "kind": "pixel"
+  },
+  "/assets/img/news/4.12.2/swift_arrow_attack.webp": {
+    "width": 480,
+    "height": 480,
+    "kind": "painted",
+    "cutout": true
+  },
+  "/assets/img/news/4.12.2/yggra_attack.webp": {
+    "width": 480,
+    "height": 480,
+    "kind": "painted",
+    "cutout": true
+  },
   "/assets/img/news/4.8.0/banner.webp": {
     "width": 1400,
     "height": 781,
