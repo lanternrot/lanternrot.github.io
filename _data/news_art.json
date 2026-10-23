@@ -267,6 +267,161 @@
     "kind": "painted",
     "cutout": true
   },
+  "/assets/img/news/4.13.0/ancient_titan.webp": {
+    "width": 256,
+    "height": 256,
+    "kind": "pixel"
+  },
+  "/assets/img/news/4.13.0/avalanche_marmot.webp": {
+    "width": 128,
+    "height": 128,
+    "kind": "pixel"
+  },
+  "/assets/img/news/4.13.0/banner.webp": {
+    "width": 1400,
+    "height": 781,
+    "kind": "painted"
+  },
+  "/assets/img/news/4.13.0/blood_altar.webp": {
+    "width": 420,
+    "height": 525,
+    "kind": "painted"
+  },
+  "/assets/img/news/4.13.0/broken_sledge.webp": {
+    "width": 420,
+    "height": 525,
+    "kind": "painted"
+  },
+  "/assets/img/news/4.13.0/fire_elemental.webp": {
+    "width": 128,
+    "height": 128,
+    "kind": "pixel"
+  },
+  "/assets/img/news/4.13.0/frost_sanctum.webp": {
+    "width": 420,
+    "height": 525,
+    "kind": "painted"
+  },
+  "/assets/img/news/4.13.0/frozen_cascade.webp": {
+    "width": 420,
+    "height": 525,
+    "kind": "painted"
+  },
+  "/assets/img/news/4.13.0/fungal_gallery.webp": {
+    "width": 420,
+    "height": 525,
+    "kind": "painted"
+  },
+  "/assets/img/news/4.13.0/gate_crowd_caller.webp": {
+    "width": 128,
+    "height": 128,
+    "kind": "pixel"
+  },
+  "/assets/img/news/4.13.0/gate_netman.webp": {
+    "width": 128,
+    "height": 128,
+    "kind": "pixel"
+  },
+  "/assets/img/news/4.13.0/gate_shieldman.webp": {
+    "width": 128,
+    "height": 128,
+    "kind": "pixel"
+  },
+  "/assets/img/news/4.13.0/gate_twin_blades.webp": {
+    "width": 128,
+    "height": 128,
+    "kind": "pixel"
+  },
+  "/assets/img/news/4.13.0/giants_path.webp": {
+    "width": 420,
+    "height": 525,
+    "kind": "painted"
+  },
+  "/assets/img/news/4.13.0/hydra.webp": {
+    "width": 128,
+    "height": 128,
+    "kind": "pixel"
+  },
+  "/assets/img/news/4.13.0/moray_eel.webp": {
+    "width": 128,
+    "height": 128,
+    "kind": "pixel"
+  },
+  "/assets/img/news/4.13.0/nest_hollow.webp": {
+    "width": 420,
+    "height": 525,
+    "kind": "painted"
+  },
+  "/assets/img/news/4.13.0/nesting_roc.webp": {
+    "width": 128,
+    "height": 128,
+    "kind": "pixel"
+  },
+  "/assets/img/news/4.13.0/parcel.webp": {
+    "width": 64,
+    "height": 64,
+    "kind": "pixel"
+  },
+  "/assets/img/news/4.13.0/patrol_shark.webp": {
+    "width": 128,
+    "height": 128,
+    "kind": "pixel"
+  },
+  "/assets/img/news/4.13.0/peaks_map.webp": {
+    "width": 1000,
+    "height": 545,
+    "kind": "painted"
+  },
+  "/assets/img/news/4.13.0/roc_chick.webp": {
+    "width": 128,
+    "height": 128,
+    "kind": "pixel"
+  },
+  "/assets/img/news/4.13.0/spider_queen.webp": {
+    "width": 256,
+    "height": 256,
+    "kind": "pixel"
+  },
+  "/assets/img/news/4.13.0/summit_giant.webp": {
+    "width": 256,
+    "height": 256,
+    "kind": "pixel"
+  },
+  "/assets/img/news/4.13.0/summoning_circle.webp": {
+    "width": 420,
+    "height": 525,
+    "kind": "painted"
+  },
+  "/assets/img/news/4.13.0/thunder_hawk.webp": {
+    "width": 128,
+    "height": 128,
+    "kind": "pixel"
+  },
+  "/assets/img/news/4.13.0/titans_throne.webp": {
+    "width": 420,
+    "height": 525,
+    "kind": "painted"
+  },
+  "/assets/img/news/4.13.0/trunk.webp": {
+    "width": 64,
+    "height": 64,
+    "kind": "pixel"
+  },
+  "/assets/img/news/4.13.0/volcanic_drake.webp": {
+    "width": 256,
+    "height": 256,
+    "kind": "pixel"
+  },
+  "/assets/img/news/4.13.0/water_naga.webp": {
+    "width": 128,
+    "height": 128,
+    "kind": "pixel"
+  },
+  "/assets/img/news/4.13.0/wind_spirit.webp": {
+    "width": 128,
+    "height": 128,
+    "kind": "pixel"
+  },
   "/assets/img/news/4.8.0/banner.webp": {
     "width": 1400,
     "height": 781,
