@@ -1,0 +1,12 @@
+{
+  "version": "4.14.0",
+  "release": "d743fdb8",
+  "previous": "2f21e476",
+  "budget_kb": 1500,
+  "art": [
+    { "name": "banner", "src": "src/assets/heroes/tales/attack/yggra_world_root.avif", "kind": "painted", "expect": [1200, 1200], "max_width": 800,
+      "earlier_art": "Patrick, 2026-10-23 (\"using old art is OK\"): 4.14.0 shipped no art; Yggra's leader skill leads the patch, so her attack painting is the banner" },
+    { "name": "shadow-king", "src": "src/assets/heroes/tales/attack/shadow_king.avif", "kind": "painted", "expect": [1200, 1200], "max_width": 480,
+      "earlier_art": "Patrick, 2026-10-23 (\"using old art is OK\"): the Shadow King's section has no shipped art, so his attack painting stands beside it" }
+  ]
+}
