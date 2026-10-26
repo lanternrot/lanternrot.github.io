@@ -7,8 +7,11 @@ layout: default
       <a class="back" href="/news/">← All news</a>
       {%- if page.image %}
       {%- assign banner = site.data.news_art[page.image] %}
+      {%- comment -%} A pixel-art banner zooms by whole numbers when the post sets image_scale (and image_scale_sm for phones). {%- endcomment -%}
+      {%- assign banner_px = false %}
+      {%- if page.image_scale and banner.kind == 'pixel' %}{% assign banner_px = true %}{% endif %}
       <figure class="post-banner">
-        <div class="banner-frame" style="--banner:url('{{ page.image }}')"><img src="{{ page.image }}" alt="{{ page.image_alt | escape }}"{% if banner %} width="{{ banner.width }}" height="{{ banner.height }}"{% endif %} fetchpriority="high"></div>
+        <div class="banner-frame{% if banner_px %} banner-px{% endif %}" style="--banner:url('{{ page.image }}'){% if banner_px %}; --w:{{ banner.width }}; --scale:{{ page.image_scale }}; --scale-sm:{{ page.image_scale_sm | default: page.image_scale }}{% endif %}"><img src="{{ page.image }}" alt="{{ page.image_alt | escape }}"{% if banner %} width="{{ banner.width }}" height="{{ banner.height }}"{% endif %} fetchpriority="high"></div>
         {%- if page.image_caption %}
         <figcaption>{{ page.image_caption }}</figcaption>
         {%- endif %}
