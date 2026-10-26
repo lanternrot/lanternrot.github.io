@@ -32,6 +32,7 @@ web3forms_access_key: "1fd6c060-24d6-4023-b907-a13e81e724c9" # gitleaks:allow (p
 # Dev tooling and local-only files never ship to the site.
 exclude:
   - tools/
+  - workers/
   - tests/
   - package.json
   - package-lock.json

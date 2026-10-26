@@ -3,6 +3,8 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "test": "node --test \"tests/*.test.js\""
+    "test": "node --test \"tests/*.test.js\"",
+    "deploy:dl": "npx wrangler deploy -c workers/dl/wrangler.jsonc",
+    "check:dl": "node workers/dl/check-live.mjs"
   }
 }
