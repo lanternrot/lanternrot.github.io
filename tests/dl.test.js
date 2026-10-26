@@ -22,3 +22,8 @@ test("today lanternrot.com sends each Dorf file on to the same GitHub file phone
     goesTo: "https://raw.githubusercontent.com/Deltran/dorf/main/changelog.txt",
   });
 });
+
+test("a file lanternrot.com doesn't know gets a plain not found", async () => {
+  assert.deepEqual(await ask("/dorf/old-build.apk"), { status: 404, goesTo: null });
+  assert.deepEqual(await ask("/"), { status: 404, goesTo: null });
+});
