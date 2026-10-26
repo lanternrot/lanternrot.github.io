@@ -1,0 +1,17 @@
+{
+  "version": "4.15.0",
+  "release": "93a4aca5",
+  "previous": "24502f12",
+  "budget_kb": 1500,
+  "art": [
+    { "name": "banner", "src": "src/assets/enemies/states/magma_golem_crusted.png", "kind": "pixel", "expect": [128, 128] },
+    { "name": "cinder_dryad", "src": "src/assets/enemies/states/cinder_dryad_put_out.png", "kind": "pixel", "expect": [128, 128] },
+    { "name": "coral_golem", "src": "src/assets/enemies/states/coral_golem_snapped.png", "kind": "pixel", "expect": [128, 128] },
+    { "name": "wind_spirit", "src": "src/assets/enemies/states/wind_spirit_snagged.png", "kind": "pixel", "expect": [128, 128] },
+    { "name": "steam", "src": "src/assets/fx/steam/large.png", "kind": "pixel", "expect": [44, 40] },
+    { "name": "blast", "src": "src/assets/fx/blast/fire_large.png", "kind": "pixel", "expect": [50, 50] },
+    { "name": "meltwater", "src": "src/assets/fx/meltwater/splash_large.png", "kind": "pixel", "expect": [68, 62] },
+    { "name": "shards", "src": "src/assets/fx/shards/branch.png", "kind": "pixel", "expect": [40, 50] },
+    { "name": "dust", "src": "src/assets/fx/dust/dust_large.png", "kind": "pixel", "expect": [41, 43] }
+  ]
+}
