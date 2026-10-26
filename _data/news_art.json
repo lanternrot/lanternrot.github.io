@@ -434,6 +434,51 @@
     "kind": "painted",
     "cutout": true
   },
+  "/assets/img/news/4.15.0/banner.webp": {
+    "width": 128,
+    "height": 128,
+    "kind": "pixel"
+  },
+  "/assets/img/news/4.15.0/blast.webp": {
+    "width": 50,
+    "height": 50,
+    "kind": "pixel"
+  },
+  "/assets/img/news/4.15.0/cinder_dryad.webp": {
+    "width": 128,
+    "height": 128,
+    "kind": "pixel"
+  },
+  "/assets/img/news/4.15.0/coral_golem.webp": {
+    "width": 128,
+    "height": 128,
+    "kind": "pixel"
+  },
+  "/assets/img/news/4.15.0/dust.webp": {
+    "width": 41,
+    "height": 43,
+    "kind": "pixel"
+  },
+  "/assets/img/news/4.15.0/meltwater.webp": {
+    "width": 68,
+    "height": 62,
+    "kind": "pixel"
+  },
+  "/assets/img/news/4.15.0/shards.webp": {
+    "width": 40,
+    "height": 50,
+    "kind": "pixel"
+  },
+  "/assets/img/news/4.15.0/steam.webp": {
+    "width": 44,
+    "height": 40,
+    "kind": "pixel"
+  },
+  "/assets/img/news/4.15.0/wind_spirit.webp": {
+    "width": 128,
+    "height": 128,
+    "kind": "pixel"
+  },
   "/assets/img/news/4.8.0/banner.webp": {
     "width": 1400,
     "height": 781,

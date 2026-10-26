@@ -284,6 +284,10 @@ code { font: 400 .86em var(--mono); color: var(--amber); }
   background: var(--banner) center / cover; filter: blur(28px) brightness(.35) saturate(1.2);
 }
 .banner-frame img { position: relative; width: auto; max-height: 560px; }
+.banner-px img {   /* a pixel-art banner (image_scale in the post): native size times a whole number, edges kept hard */
+  width: calc(var(--w) * var(--scale) * 1px); max-height: none; image-rendering: pixelated;
+}
+.banner-px { padding-block: 20px; }
 .post-banner figcaption, .art figcaption {
   margin-top: 10px; font: 400 .72rem/1.5 var(--mono); color: var(--muted); letter-spacing: .02em;
 }
@@ -377,6 +381,7 @@ code { font: 400 .86em var(--mono); color: var(--amber); }
   .art-row-media.art-paint img { max-width: 420px; }
   .rich th, .rich td { padding-right: 8px; font-size: .9rem; }
   .banner-frame img { max-height: none; width: 100%; }
+  .banner-px img { width: calc(var(--w) * var(--scale-sm) * 1px); }
   .rich > p:not(h2 ~ p) { font-size: 1.08rem; }
 }
 
