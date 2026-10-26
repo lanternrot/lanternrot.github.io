@@ -1,6 +1,6 @@
 import test from "node:test";
 import assert from "node:assert/strict";
-import worker from "../workers/dl/index.js";
+import worker, { PLACES } from "../workers/dl/index.js";
 
 // Asks dl.lanternrot.com for a file, the way a phone or a link would.
 async function ask(path) {
@@ -26,4 +26,14 @@ test("today lanternrot.com sends each Dorf file on to the same GitHub file phone
 test("a file lanternrot.com doesn't know gets a plain not found", async () => {
   assert.deepEqual(await ask("/dorf/old-build.apk"), { status: 404, goesTo: null });
   assert.deepEqual(await ask("/"), { status: 404, goesTo: null });
+});
+
+test("moving a file is one change to where lanternrot.com points, with no new build", async () => {
+  const today = PLACES["/dorf/dorf.apk"];
+  PLACES["/dorf/dorf.apk"] = "https://files.lanternrot.com/dorf/dorf.apk";
+  try {
+    assert.deepEqual(await ask("/dorf/dorf.apk"), { status: 302, goesTo: "https://files.lanternrot.com/dorf/dorf.apk" });
+  } finally {
+    PLACES["/dorf/dorf.apk"] = today;
+  }
 });
