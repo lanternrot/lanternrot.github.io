@@ -12,6 +12,7 @@ export default {
   async fetch(request) {
     const place = PLACES[new URL(request.url).pathname];
     if (!place) return new Response("Not found\n", { status: 404 });
-    return new Response(null, { status: 302, headers: { Location: place } });
+    // The game fetches from inside its web view, which drops a forward without this header.
+    return new Response(null, { status: 302, headers: { Location: place, "Access-Control-Allow-Origin": "*" } });
   },
 };

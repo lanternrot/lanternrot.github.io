@@ -3,8 +3,12 @@ import assert from "node:assert/strict";
 import worker, { PLACES } from "../workers/dl/index.js";
 
 // Asks dl.lanternrot.com for a file, the way a phone or a link would.
+function send(path) {
+  return worker.fetch(new Request(`https://dl.lanternrot.com${path}`));
+}
+
 async function ask(path) {
-  const response = await worker.fetch(new Request(`https://dl.lanternrot.com${path}`));
+  const response = await send(path);
   return { status: response.status, goesTo: response.headers.get("Location") };
 }
 
@@ -35,5 +39,12 @@ test("moving a file is one change to where lanternrot.com points, with no new bu
     assert.deepEqual(await ask("/dorf/dorf.apk"), { status: 302, goesTo: "https://files.lanternrot.com/dorf/dorf.apk" });
   } finally {
     PLACES["/dorf/dorf.apk"] = today;
+  }
+});
+
+test("the game can read every forward from inside its web view", async () => {
+  for (const path of Object.keys(PLACES)) {
+    const response = await send(path);
+    assert.equal(response.headers.get("Access-Control-Allow-Origin"), "*", path);
   }
 });
