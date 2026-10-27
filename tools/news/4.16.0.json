@@ -1,0 +1,9 @@
+{
+  "version": "4.16.0",
+  "release": "0d8a913b",
+  "previous": "93a4aca5",
+  "budget_kb": 1500,
+  "art": [
+    { "name": "banner", "src": "src/assets/map/landmarks/shrine_dark.png", "kind": "pixel", "expect": [38, 45] }
+  ]
+}
