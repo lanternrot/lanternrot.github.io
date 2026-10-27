@@ -479,6 +479,11 @@
     "height": 128,
     "kind": "pixel"
   },
+  "/assets/img/news/4.16.0/banner.webp": {
+    "width": 38,
+    "height": 45,
+    "kind": "pixel"
+  },
   "/assets/img/news/4.8.0/banner.webp": {
     "width": 1400,
     "height": 781,
