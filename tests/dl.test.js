@@ -48,3 +48,10 @@ test("the game can read every forward from inside its web view", async () => {
     assert.equal(response.headers.get("Access-Control-Allow-Origin"), "*", path);
   }
 });
+
+test("the mailbox's gifts are sent on to the feed repo's mail.json", async () => {
+  assert.deepEqual(await ask("/dorf/mail.json"), {
+    status: 302,
+    goesTo: "https://raw.githubusercontent.com/Deltran/dorf/main/mail.json",
+  });
+});

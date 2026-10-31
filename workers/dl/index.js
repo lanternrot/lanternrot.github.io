@@ -6,6 +6,7 @@ export const PLACES = {
   "/dorf/dorf.apk": "https://github.com/Deltran/dorf/releases/latest/download/dorf.apk",
   "/dorf/web-manifest.json": "https://raw.githubusercontent.com/Deltran/dorf/main/web-manifest.json",
   "/dorf/changelog.txt": "https://raw.githubusercontent.com/Deltran/dorf/main/changelog.txt",
+  "/dorf/mail.json": "https://raw.githubusercontent.com/Deltran/dorf/main/mail.json",
 };
 
 export default {
