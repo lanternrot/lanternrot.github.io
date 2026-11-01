@@ -1,0 +1,17 @@
+{
+  "version": "4.17.1",
+  "release": "93a4aca5b",
+  "previous": "24502f12e",
+  "budget_kb": 1500,
+  "art": [
+    { "name": "banner", "src": "src/assets/heroes/tales/attack/ambrose_wain.avif", "kind": "painted", "expect": [1200, 1200], "max_width": 800 },
+    { "name": "ambrose_wain_tale", "src": "src/assets/heroes/tales/ambrose_wain.avif", "kind": "painted", "expect": [924, 1600], "max_width": 420 },
+    { "name": "quorra_vell_tale", "src": "src/assets/heroes/tales/quorra_vell.avif", "kind": "painted", "expect": [823, 1600], "max_width": 420 },
+    { "name": "wilf_hobday_tale", "src": "src/assets/heroes/tales/wilf_hobday.avif", "kind": "painted", "expect": [548, 1600], "max_width": 420 },
+    { "name": "quorra_vell_attack", "src": "src/assets/heroes/tales/attack/quorra_vell.avif", "kind": "painted", "expect": [1200, 1200], "max_width": 560 },
+    { "name": "wilf_hobday_attack", "src": "src/assets/heroes/tales/attack/wilf_hobday.avif", "kind": "painted", "expect": [1200, 1200], "max_width": 560 },
+    { "name": "ambrose_wain", "src": "src/assets/heroes/ambrose_wain.png", "kind": "pixel", "expect": [128, 128] },
+    { "name": "quorra_vell", "src": "src/assets/heroes/quorra_vell.png", "kind": "pixel", "expect": [128, 128] },
+    { "name": "wilf_hobday", "src": "src/assets/heroes/wilf_hobday.png", "kind": "pixel", "expect": [128, 128] }
+  ]
+}
