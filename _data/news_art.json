@@ -798,5 +798,10 @@
     "width": 128,
     "height": 128,
     "kind": "pixel"
+  },
+  "/assets/img/news/5.0.1/banner.webp": {
+    "width": 1170,
+    "height": 720,
+    "kind": "painted"
   }
 }
