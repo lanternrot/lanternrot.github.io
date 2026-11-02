@@ -1,0 +1,28 @@
+{
+  "version": "5.0.0",
+  "release": "9f54bb17e",
+  "previous": "c2d35753f",
+  "budget_kb": 1500,
+  "art": [
+    { "name": "banner", "src": "src/assets/maps/whispering_woods.webp", "kind": "painted", "expect": [2816, 1536], "max_width": 1200 },
+    { "name": "forest_01", "src": "src/assets/battle_backgrounds/forest_01.png", "kind": "painted", "expect": [600, 1000], "crop": [0, 80, 600, 600], "max_width": 420 },
+    { "name": "forest_03", "src": "src/assets/battle_backgrounds/forest_03.png", "kind": "painted", "expect": [600, 1000], "crop": [0, 80, 600, 600], "max_width": 420 },
+    { "name": "forest_05", "src": "src/assets/battle_backgrounds/forest_05.png", "kind": "painted", "expect": [600, 1000], "crop": [0, 80, 600, 600], "max_width": 420 },
+    { "name": "forest_10", "src": "src/assets/battle_backgrounds/forest_10.png", "kind": "painted", "expect": [600, 1000], "crop": [0, 80, 600, 600], "max_width": 420 },
+    { "name": "goblin_commander", "src": "src/assets/enemies/goblin_commander.png", "kind": "pixel", "expect": [128, 128] },
+    { "name": "goblin_chieftain", "src": "src/assets/enemies/goblin_chieftain.png", "kind": "pixel", "expect": [128, 128] },
+    { "name": "goblin_thumper", "src": "src/assets/enemies/goblin_thumper.png", "kind": "pixel", "expect": [128, 128] },
+    { "name": "goblin_filcher", "src": "src/assets/enemies/goblin_filcher.png", "kind": "pixel", "expect": [128, 128] },
+    { "name": "goblin_lookout", "src": "src/assets/enemies/goblin_lookout.png", "kind": "pixel", "expect": [128, 128] },
+    { "name": "cave_runt", "src": "src/assets/enemies/cave_runt.png", "kind": "pixel", "expect": [128, 128] },
+    { "name": "catacombs_map", "src": "src/assets/maps/ancient_catacombs.webp", "kind": "painted", "expect": [2752, 1536], "max_width": 900 },
+    { "name": "cata_candle_chapel", "src": "src/assets/battle_backgrounds/cata_candle_chapel.png", "kind": "painted", "expect": [600, 1000], "crop": [0, 60, 600, 600], "max_width": 420 },
+    { "name": "cata_ossuary", "src": "src/assets/battle_backgrounds/cata_ossuary.png", "kind": "painted", "expect": [600, 1000], "crop": [0, 60, 600, 600], "max_width": 420 },
+    { "name": "cata_embalmers_hall", "src": "src/assets/battle_backgrounds/cata_embalmers_hall.png", "kind": "painted", "expect": [600, 1000], "crop": [0, 60, 600, 600], "max_width": 420 },
+    { "name": "cata_07", "src": "src/assets/battle_backgrounds/cata_07.png", "kind": "painted", "expect": [600, 1000], "crop": [0, 60, 600, 600], "max_width": 420 },
+    { "name": "arena_dregs", "src": "src/assets/backgrounds/arenas/dregs.png", "kind": "painted", "expect": [1200, 1600], "max_width": 420 },
+    { "name": "arena_proving_grounds", "src": "src/assets/backgrounds/arenas/proving_grounds.png", "kind": "painted", "expect": [1200, 1600], "max_width": 420 },
+    { "name": "arena_crucible", "src": "src/assets/backgrounds/arenas/crucible.png", "kind": "painted", "expect": [1200, 1600], "max_width": 420 },
+    { "name": "arena_hall_of_legends", "src": "src/assets/backgrounds/arenas/hall_of_legends.png", "kind": "painted", "expect": [1200, 1600], "max_width": 420 }
+  ]
+}
