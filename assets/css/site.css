@@ -313,6 +313,10 @@ code { font: 400 .86em var(--mono); color: var(--amber); }
 .art { margin: 1.8em 0 2.2em; }
 .art:not(.art-side) { clear: both; }
 .art-paint img { width: 100%; border: 1px solid var(--line); background: var(--bg-deep); }
+.art-video video {   /* a clip of pixel art: edges kept hard */
+  display: block; width: 100%; height: auto; border: 1px solid var(--line); background: var(--bg-deep);
+  image-rendering: pixelated;
+}
 .art-px img {   /* pixel art: native size times a whole number, edges kept hard */
   width: calc(var(--w) * var(--scale) * 1px); max-width: none; height: auto; image-rendering: pixelated;
 }

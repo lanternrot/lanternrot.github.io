@@ -1,0 +1,26 @@
+{%- comment -%}
+One short clip in a news post: plays muted on a loop, like a moving picture, with an optional caption.
+
+  {% include video.html src="poison.mp4" poster="poison_poster.webp" alt="A poisoned wolf bubbling lime" caption="Poison" %}
+
+  src       the .mp4 in the post's art folder (/assets/img/news/<page.version>/), or a full path from /
+  poster    a still shown before the clip loads (same folder rules)
+  alt       what the clip shows, read out by screen readers (falls back to the caption)
+  caption   short line under the clip (optional)
+  side      true floats it to the right of the text on wide screens (for a tall clip)
+
+Clips aren't made by tools/news_art.py: put them in the folder by hand, H.264 with no sound and faststart.
+A clip missing from the site renders as a red "missing art" box, as figure.html does.
+{%- endcomment -%}
+{%- capture clip_src %}{% include news-art-src.html src=include.src %}{% endcapture -%}
+{%- capture clip_poster %}{% if include.poster %}{% include news-art-src.html src=include.poster %}{% endif %}{% endcapture -%}
+{%- assign clip_file = site.static_files | where: "path", clip_src | first -%}
+{%- assign clip_alt = include.alt | default: include.caption -%}
+{%- if clip_file == nil -%}
+<p class="art-missing">Missing news clip: {{ clip_src }}</p>
+{%- else -%}
+<figure class="art art-video{% if include.side %} art-side{% endif %}">
+<video src="{{ clip_src }}"{% if include.poster %} poster="{{ clip_poster }}"{% endif %} autoplay muted loop playsinline preload="metadata" aria-label="{{ clip_alt | escape }}"></video>
+{%- if include.caption %}<figcaption>{{ include.caption }}</figcaption>{% endif %}
+</figure>
+{%- endif -%}
