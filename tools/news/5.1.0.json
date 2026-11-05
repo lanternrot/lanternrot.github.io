@@ -1,0 +1,24 @@
+{
+  "version": "5.1.0",
+  "release": "434727e89",
+  "previous": "57e4129d6",
+  "budget_kb": 1500,
+  "art": [
+    { "name": "banner", "src": "src/assets/battle_backgrounds/morass_listening_pools.png", "kind": "painted", "crop": [0, 350, 600, 330], "max_width": 1400, "expect": [600, 1000] },
+    { "name": "morass_shrieker_beds", "src": "src/assets/battle_backgrounds/morass_shrieker_beds.png", "kind": "painted", "max_width": 420, "expect": [600, 1000] },
+    { "name": "morass_leech_falls", "src": "src/assets/battle_backgrounds/morass_leech_falls.png", "kind": "painted", "max_width": 420, "expect": [600, 1000] },
+    { "name": "morass_drowned_mine", "src": "src/assets/battle_backgrounds/morass_drowned_mine.png", "kind": "painted", "max_width": 420, "expect": [600, 1000] },
+    { "name": "morass_brood", "src": "src/assets/battle_backgrounds/morass_brood.png", "kind": "painted", "max_width": 420, "expect": [600, 1000] },
+    { "name": "flood_drowned_village", "src": "src/assets/battle_backgrounds/flood_drowned_village.png", "kind": "painted", "max_width": 420, "expect": [600, 1000] },
+    { "name": "flood_mill_race", "src": "src/assets/battle_backgrounds/flood_mill_race.png", "kind": "painted", "max_width": 420, "expect": [600, 1000] },
+    { "name": "flood_old_barrow", "src": "src/assets/battle_backgrounds/flood_old_barrow.png", "kind": "painted", "max_width": 420, "expect": [600, 1000] },
+    { "name": "flood_peat_cuttings", "src": "src/assets/battle_backgrounds/flood_peat_cuttings.png", "kind": "painted", "max_width": 420, "expect": [600, 1000] },
+    { "name": "merelock", "src": "src/assets/enemies/merelock.png", "kind": "pixel", "expect": [128, 128] },
+    { "name": "tangle_golem", "src": "src/assets/enemies/tangle_golem.png", "kind": "pixel", "expect": [128, 128] },
+    { "name": "black_water", "src": "src/assets/enemies/black_water.png", "kind": "pixel", "expect": [128, 128] },
+    { "name": "agitated_whelp", "src": "src/assets/enemies/agitated_whelp.png", "kind": "pixel", "expect": [128, 128] },
+    { "name": "ghoul", "src": "src/assets/enemies/ghoul.png", "kind": "pixel", "expect": [128, 128] },
+    { "name": "eel_trapper", "src": "src/assets/enemies/eel_trapper.png", "kind": "pixel", "expect": [128, 128] },
+    { "name": "sawgrass", "src": "src/assets/enemies/sawgrass.png", "kind": "pixel", "expect": [128, 128] }
+  ]
+}

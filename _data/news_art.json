@@ -803,5 +803,90 @@
     "width": 1170,
     "height": 720,
     "kind": "painted"
+  },
+  "/assets/img/news/5.1.0/agitated_whelp.webp": {
+    "width": 128,
+    "height": 128,
+    "kind": "pixel"
+  },
+  "/assets/img/news/5.1.0/banner.webp": {
+    "width": 600,
+    "height": 330,
+    "kind": "painted"
+  },
+  "/assets/img/news/5.1.0/black_water.webp": {
+    "width": 128,
+    "height": 128,
+    "kind": "pixel"
+  },
+  "/assets/img/news/5.1.0/eel_trapper.webp": {
+    "width": 128,
+    "height": 128,
+    "kind": "pixel"
+  },
+  "/assets/img/news/5.1.0/flood_drowned_village.webp": {
+    "width": 420,
+    "height": 700,
+    "kind": "painted"
+  },
+  "/assets/img/news/5.1.0/flood_mill_race.webp": {
+    "width": 420,
+    "height": 700,
+    "kind": "painted"
+  },
+  "/assets/img/news/5.1.0/flood_old_barrow.webp": {
+    "width": 420,
+    "height": 700,
+    "kind": "painted"
+  },
+  "/assets/img/news/5.1.0/flood_peat_cuttings.webp": {
+    "width": 420,
+    "height": 700,
+    "kind": "painted"
+  },
+  "/assets/img/news/5.1.0/ghoul.webp": {
+    "width": 128,
+    "height": 128,
+    "kind": "pixel"
+  },
+  "/assets/img/news/5.1.0/map_pointers.webp": {
+    "width": 420,
+    "height": 933,
+    "kind": "painted"
+  },
+  "/assets/img/news/5.1.0/merelock.webp": {
+    "width": 128,
+    "height": 128,
+    "kind": "pixel"
+  },
+  "/assets/img/news/5.1.0/morass_brood.webp": {
+    "width": 420,
+    "height": 700,
+    "kind": "painted"
+  },
+  "/assets/img/news/5.1.0/morass_drowned_mine.webp": {
+    "width": 420,
+    "height": 700,
+    "kind": "painted"
+  },
+  "/assets/img/news/5.1.0/morass_leech_falls.webp": {
+    "width": 420,
+    "height": 700,
+    "kind": "painted"
+  },
+  "/assets/img/news/5.1.0/morass_shrieker_beds.webp": {
+    "width": 420,
+    "height": 700,
+    "kind": "painted"
+  },
+  "/assets/img/news/5.1.0/sawgrass.webp": {
+    "width": 128,
+    "height": 128,
+    "kind": "pixel"
+  },
+  "/assets/img/news/5.1.0/tangle_golem.webp": {
+    "width": 128,
+    "height": 128,
+    "kind": "pixel"
   }
 }
