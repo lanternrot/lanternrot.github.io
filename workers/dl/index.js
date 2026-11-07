@@ -45,19 +45,34 @@ async function forwardTwitchCall(request, method) {
   return answer(reply.body, reply.status, { "Content-Type": reply.headers.get("Content-Type") ?? "application/json" });
 }
 
-function twitchCall(request, method) {
+// The service holds only so many open link codes across every player, so one address calling start in a loop
+// could lock everyone out. The limits are per caller address; their sizes are in wrangler.jsonc.
+// With no limiter bound the call goes through, and the log says so: the limit is off, not the route.
+async function overLimit(request, env, method) {
+  const limiter = method === "start" ? env?.START_LIMIT : env?.CALL_LIMIT;
+  if (!limiter) {
+    console.error(`dl: the rate limit is off, no ${method === "start" ? "START_LIMIT" : "CALL_LIMIT"} binding on this Worker`);
+    return false;
+  }
+  const { success } = await limiter.limit({ key: request.headers.get("CF-Connecting-IP") ?? "unknown" });
+  return !success;
+}
+
+async function twitchCall(request, env, method) {
   if (!TWITCH_METHODS.includes(method)) return answer("Not found\n", 404);
   if (request.method === "OPTIONS") {
     return answer(null, 204, { "Access-Control-Allow-Methods": "POST, OPTIONS", "Access-Control-Allow-Headers": "Content-Type", "Access-Control-Max-Age": "86400" });
   }
   if (request.method !== "POST") return answer("Method not allowed\n", 405, { Allow: "POST, OPTIONS" });
+  // The game reads a 429 as "can't reach Twitch right now".
+  if (await overLimit(request, env, method)) return answer("Too many calls\n", 429, { "Retry-After": "60" });
   return forwardTwitchCall(request, method);
 }
 
 export default {
-  async fetch(request) {
+  async fetch(request, env) {
     const { pathname } = new URL(request.url);
-    if (pathname.startsWith(TWITCH_PREFIX)) return twitchCall(request, pathname.slice(TWITCH_PREFIX.length));
+    if (pathname.startsWith(TWITCH_PREFIX)) return twitchCall(request, env, pathname.slice(TWITCH_PREFIX.length));
     const place = PLACES[pathname];
     if (!place) return new Response("Not found\n", { status: 404 });
     // The game fetches from inside its web view, which drops a forward without this header.

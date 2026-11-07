@@ -39,6 +39,13 @@ for (const [path, place] of Object.entries(PLACES)) {
   check(file.ok && bytes > 0, `${url} ends at a real file (${file.status}, ${bytes} bytes)`);
 }
 
+// The Twitch link route: the browser's preflight must be answered here, never forwarded (no call reaches the service).
+const preflight = await reach("https://dl.lanternrot.com/dorf/twitch/check", { method: "OPTIONS" });
+if (preflight) {
+  const readable = preflight.status === 204 && preflight.headers.get("Access-Control-Allow-Origin") === "*" && preflight.headers.get("Access-Control-Allow-Methods") === "POST, OPTIONS";
+  check(readable, `the Twitch link route answers the game's preflight (got ${preflight.status})`);
+}
+
 for (const url of OLD_ADDRESSES) {
   const file = await reach(url, { method: "HEAD" });
   if (file) check(file.ok, `older builds still reach ${url} (${file.status})`);

@@ -180,3 +180,49 @@ test("a link service that takes too long reads as a 504, and the call is given a
     },
   );
 });
+
+test("a caller who has used up the start limit is told 429 and start never reaches the service", async () => {
+  const env = { START_LIMIT: { limit: async () => ({ success: false }) }, CALL_LIMIT: openLimiter() };
+  await withService(Response.json({}), async (calls) => {
+    const response = await callTwitch("start", { env });
+    assert.equal(response.status, 429);
+    assert.equal(response.headers.get("Access-Control-Allow-Origin"), "*");
+    assert.equal(calls.length, 0);
+  });
+});
+
+test("start is counted on its own tight limit and the other four on the looser one, each per caller address", async () => {
+  const env = openEnv();
+  await withService(Response.json({}), async () => {
+    await callTwitch("start", { env, ip: "198.51.100.9" });
+    for (const method of ["check", "status", "received", "unlink"]) await callTwitch(method, { env, ip: "198.51.100.9" });
+  });
+  assert.deepEqual(env.START_LIMIT.keys, ["198.51.100.9"]);
+  assert.deepEqual(env.CALL_LIMIT.keys, Array(4).fill("198.51.100.9"));
+});
+
+test("the looser limit also answers 429 when it runs out", async () => {
+  const env = { START_LIMIT: openLimiter(), CALL_LIMIT: { limit: async () => ({ success: false }) } };
+  await withService(Response.json({}), async (calls) => {
+    const response = await callTwitch("check", { env });
+    assert.equal(response.status, 429);
+    assert.equal(calls.length, 0);
+  });
+});
+
+test("with no limiter bound the call goes through and the log says the limit is off", async () => {
+  const logged = [];
+  const realError = console.error;
+  console.error = (...args) => logged.push(args.join(" "));
+  try {
+    await withService(Response.json({ ok: true }), async (calls) => {
+      const response = await callTwitch("start", { env: {} });
+      assert.equal(response.status, 200);
+      assert.equal(calls.length, 1);
+    });
+  } finally {
+    console.error = realError;
+  }
+  assert.equal(logged.length, 1);
+  assert.match(logged[0], /rate limit.*off/i);
+});
