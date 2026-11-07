@@ -55,3 +55,54 @@ test("the mailbox's gifts are sent on to the feed repo's mail.json", async () =>
     goesTo: "https://raw.githubusercontent.com/Deltran/dorf/main/mail.json",
   });
 });
+
+// ---- The Twitch link route: the game's calls on to the link service ----
+
+const SERVICE = "https://stream-control-deltran.fly.dev/m/dorf-link/api";
+const METHODS = ["start", "check", "status", "received", "unlink"];
+
+// Stands in for the link service: records each call it gets and answers with `answer`.
+// Restored after each test so no other test sees it.
+async function withService(answer, run) {
+  const realFetch = globalThis.fetch;
+  const calls = [];
+  globalThis.fetch = async (url, init) => {
+    calls.push({ url: String(url), init });
+    return typeof answer === "function" ? answer(url, init) : answer.clone();
+  };
+  try {
+    return await run(calls);
+  } finally {
+    globalThis.fetch = realFetch;
+  }
+}
+
+// A limiter that always lets the call through, and records the keys it was asked about.
+function openLimiter() {
+  const keys = [];
+  return { keys, limit: async ({ key }) => (keys.push(key), { success: true }) };
+}
+const openEnv = () => ({ START_LIMIT: openLimiter(), CALL_LIMIT: openLimiter() });
+
+// The game's call: a POST with a JSON body from inside its web view.
+function callTwitch(method, { env = openEnv(), body = '{"a":1}', verb = "POST", ip = "203.0.113.7" } = {}) {
+  const request = new Request(`https://dl.lanternrot.com/dorf/twitch/${method}`, {
+    method: verb,
+    headers: { "Content-Type": "application/json", "CF-Connecting-IP": ip },
+    body: verb === "POST" ? body : undefined,
+  });
+  return worker.fetch(request, env);
+}
+
+test("each of the game's five Twitch calls goes on to the link service as the same POST", async () => {
+  for (const method of METHODS) {
+    await withService(Response.json({ ok: true }), async (calls) => {
+      await callTwitch(method, { body: '{"phoneKey":"abc"}' });
+      assert.equal(calls.length, 1, method);
+      assert.equal(calls[0].url, `${SERVICE}/${method}`);
+      assert.equal(calls[0].init.method, "POST");
+      assert.equal(calls[0].init.headers["Content-Type"], "application/json");
+      assert.equal(calls[0].init.body, '{"phoneKey":"abc"}');
+    });
+  }
+});
