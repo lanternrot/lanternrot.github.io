@@ -888,5 +888,85 @@
     "width": 128,
     "height": 128,
     "kind": "pixel"
+  },
+  "/assets/img/news/5.2.1/aqua_02.webp": {
+    "width": 420,
+    "height": 700,
+    "kind": "painted"
+  },
+  "/assets/img/news/5.2.1/aqua_03.webp": {
+    "width": 420,
+    "height": 700,
+    "kind": "painted"
+  },
+  "/assets/img/news/5.2.1/aqua_05.webp": {
+    "width": 420,
+    "height": 700,
+    "kind": "painted"
+  },
+  "/assets/img/news/5.2.1/aqua_06.webp": {
+    "width": 420,
+    "height": 700,
+    "kind": "painted"
+  },
+  "/assets/img/news/5.2.1/aqua_07.webp": {
+    "width": 420,
+    "height": 700,
+    "kind": "painted"
+  },
+  "/assets/img/news/5.2.1/aqua_wreck.webp": {
+    "width": 420,
+    "height": 700,
+    "kind": "painted"
+  },
+  "/assets/img/news/5.2.1/banner.webp": {
+    "width": 1400,
+    "height": 1045,
+    "kind": "painted"
+  },
+  "/assets/img/news/5.2.1/bog_bloat.webp": {
+    "width": 128,
+    "height": 128,
+    "kind": "pixel"
+  },
+  "/assets/img/news/5.2.1/deep_cantor.webp": {
+    "width": 128,
+    "height": 128,
+    "kind": "pixel"
+  },
+  "/assets/img/news/5.2.1/embalmer.webp": {
+    "width": 128,
+    "height": 128,
+    "kind": "pixel"
+  },
+  "/assets/img/news/5.2.1/extra_climber.webp": {
+    "width": 128,
+    "height": 128,
+    "kind": "pixel"
+  },
+  "/assets/img/news/5.2.1/kraken.webp": {
+    "width": 128,
+    "height": 128,
+    "kind": "pixel"
+  },
+  "/assets/img/news/5.2.1/kraken_arm.webp": {
+    "width": 128,
+    "height": 128,
+    "kind": "pixel"
+  },
+  "/assets/img/news/5.2.1/kraken_arm_thicc.webp": {
+    "width": 256,
+    "height": 384,
+    "kind": "pixel"
+  },
+  "/assets/img/news/5.2.1/old_bloat.webp": {
+    "width": 128,
+    "height": 128,
+    "kind": "pixel"
+  },
+  "/assets/img/news/5.2.1/shark_pack.webp": {
+    "width": 128,
+    "height": 128,
+    "kind": "pixel"
   }
 }
