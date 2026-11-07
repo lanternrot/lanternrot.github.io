@@ -147,3 +147,36 @@ test("the browser's preflight before a Twitch call is answered with what the gam
     assert.equal(calls.length, 0);
   });
 });
+
+test("a body far bigger than any of the game's calls is refused before it reaches the service", async () => {
+  await withService(Response.json({}), async (calls) => {
+    const response = await callTwitch("received", { body: JSON.stringify({ junk: "x".repeat(10000) }) });
+    assert.equal(response.status, 413);
+    assert.equal(response.headers.get("Access-Control-Allow-Origin"), "*");
+    assert.equal(calls.length, 0);
+  });
+});
+
+test("a link service that can't be reached reads as a 502 the game can see", async () => {
+  await withService(() => Promise.reject(new TypeError("fetch failed")), async () => {
+    const response = await callTwitch("check");
+    assert.equal(response.status, 502);
+    assert.equal(response.headers.get("Access-Control-Allow-Origin"), "*");
+  });
+});
+
+test("a link service that takes too long reads as a 504, and the call is given a time limit", async () => {
+  let signal;
+  await withService(
+    (url, init) => {
+      signal = init.signal;
+      return Promise.reject(new DOMException("The operation timed out.", "TimeoutError"));
+    },
+    async () => {
+      const response = await callTwitch("check");
+      assert.equal(response.status, 504);
+      assert.equal(response.headers.get("Access-Control-Allow-Origin"), "*");
+      assert.ok(signal instanceof AbortSignal);
+    },
+  );
+});
