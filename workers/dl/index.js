@@ -9,9 +9,71 @@ export const PLACES = {
   "/dorf/mail.json": "https://raw.githubusercontent.com/Deltran/dorf/main/mail.json",
 };
 
+// The Twitch link service the game talks to (it lives inside stream-control). Moving it is a change to this line.
+export const TWITCH_LINK_SERVICE = "https://stream-control-deltran.fly.dev/m/dorf-link/api";
+const TWITCH_PREFIX = "/dorf/twitch/";
+const TWITCH_METHODS = ["start", "check", "status", "received", "unlink"];
+
+const CORS = { "Access-Control-Allow-Origin": "*" };
+
+// An answer the game can read from inside its web view: every one carries the CORS header.
+function answer(body, status, headers = {}) {
+  return new Response(body, { status, headers: { ...CORS, ...headers } });
+}
+
+// The game's calls are tiny JSON; anything bigger than this isn't the game.
+const TWITCH_BODY_CAP_BYTES = 4096;
+// The game gives up after 10 seconds, so the service gets a little less, and the game hears our answer, not its own timeout.
+const TWITCH_TIME_LIMIT_MS = 8000;
+
+async function forwardTwitchCall(request, method) {
+  const body = await request.text();
+  if (new TextEncoder().encode(body).length > TWITCH_BODY_CAP_BYTES) return answer("Too large\n", 413);
+  let reply;
+  try {
+    reply = await fetch(`${TWITCH_LINK_SERVICE}/${method}`, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body,
+      signal: AbortSignal.timeout(TWITCH_TIME_LIMIT_MS),
+    });
+  } catch (error) {
+    // The game reads any 5xx as "can't reach Twitch right now".
+    const slow = error?.name === "TimeoutError";
+    return answer(slow ? "The link service took too long\n" : "The link service could not be reached\n", slow ? 504 : 502);
+  }
+  return answer(reply.body, reply.status, { "Content-Type": reply.headers.get("Content-Type") ?? "application/json" });
+}
+
+// The service holds only so many open link codes across every player, so one address calling start in a loop
+// could lock everyone out. The limits are per caller address; their sizes are in wrangler.jsonc.
+// With no limiter bound the call goes through, and the log says so: the limit is off, not the route.
+async function overLimit(request, env, method) {
+  const limiter = method === "start" ? env?.START_LIMIT : env?.CALL_LIMIT;
+  if (!limiter) {
+    console.error(`dl: the rate limit is off, no ${method === "start" ? "START_LIMIT" : "CALL_LIMIT"} binding on this Worker`);
+    return false;
+  }
+  const { success } = await limiter.limit({ key: request.headers.get("CF-Connecting-IP") ?? "unknown" });
+  return !success;
+}
+
+async function twitchCall(request, env, method) {
+  if (!TWITCH_METHODS.includes(method)) return answer("Not found\n", 404);
+  if (request.method === "OPTIONS") {
+    return answer(null, 204, { "Access-Control-Allow-Methods": "POST, OPTIONS", "Access-Control-Allow-Headers": "Content-Type", "Access-Control-Max-Age": "86400" });
+  }
+  if (request.method !== "POST") return answer("Method not allowed\n", 405, { Allow: "POST, OPTIONS" });
+  // The game reads a 429 as "can't reach Twitch right now".
+  if (await overLimit(request, env, method)) return answer("Too many calls\n", 429, { "Retry-After": "60" });
+  return forwardTwitchCall(request, method);
+}
+
 export default {
-  async fetch(request) {
-    const place = PLACES[new URL(request.url).pathname];
+  async fetch(request, env) {
+    const { pathname } = new URL(request.url);
+    if (pathname.startsWith(TWITCH_PREFIX)) return twitchCall(request, env, pathname.slice(TWITCH_PREFIX.length));
+    const place = PLACES[pathname];
     if (!place) return new Response("Not found\n", { status: 404 });
     // The game fetches from inside its web view, which drops a forward without this header.
     return new Response(null, { status: 302, headers: { Location: place, "Access-Control-Allow-Origin": "*" } });
