@@ -106,3 +106,44 @@ test("each of the game's five Twitch calls goes on to the link service as the sa
     });
   }
 });
+
+test("the link service's answer comes back as it is, status and body, readable from the game", async () => {
+  await withService(Response.json({ error: "too many codes" }, { status: 409 }), async () => {
+    const response = await callTwitch("start");
+    assert.equal(response.status, 409);
+    assert.deepEqual(await response.json(), { error: "too many codes" });
+    assert.equal(response.headers.get("Access-Control-Allow-Origin"), "*");
+  });
+});
+
+test("a Twitch method the game doesn't have gets a plain not found, readable from the game", async () => {
+  await withService(Response.json({}), async (calls) => {
+    const response = await callTwitch("admin");
+    assert.equal(response.status, 404);
+    assert.equal(response.headers.get("Access-Control-Allow-Origin"), "*");
+    assert.equal(calls.length, 0);
+  });
+});
+
+test("anything but a POST to a Twitch call is refused, readable from the game", async () => {
+  await withService(Response.json({}), async (calls) => {
+    for (const verb of ["GET", "PUT", "DELETE"]) {
+      const response = await callTwitch("check", { verb });
+      assert.equal(response.status, 405, verb);
+      assert.equal(response.headers.get("Access-Control-Allow-Origin"), "*", verb);
+    }
+    assert.equal(calls.length, 0);
+  });
+});
+
+test("the browser's preflight before a Twitch call is answered with what the game may send", async () => {
+  await withService(Response.json({}), async (calls) => {
+    const response = await callTwitch("check", { verb: "OPTIONS" });
+    assert.equal(response.status, 204);
+    assert.equal(response.headers.get("Access-Control-Allow-Origin"), "*");
+    assert.equal(response.headers.get("Access-Control-Allow-Methods"), "POST, OPTIONS");
+    assert.equal(response.headers.get("Access-Control-Allow-Headers"), "Content-Type");
+    assert.ok(Number(response.headers.get("Access-Control-Max-Age")) >= 86400);
+    assert.equal(calls.length, 0);
+  });
+});
