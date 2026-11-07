@@ -1,0 +1,24 @@
+{
+  "version": "5.2.1",
+  "release": "36582a80c",
+  "previous": "434727e89",
+  "budget_kb": 1500,
+  "art": [
+    { "name": "banner", "src": "src/assets/maps/gate_to_aquaria.webp", "kind": "painted", "max_width": 1400, "expect": [2400, 1792] },
+    { "name": "aqua_02", "src": "src/assets/battle_backgrounds/aqua_02.png", "kind": "painted", "max_width": 420, "expect": [600, 1000] },
+    { "name": "aqua_03", "src": "src/assets/battle_backgrounds/aqua_03.png", "kind": "painted", "max_width": 420, "expect": [600, 1000] },
+    { "name": "aqua_05", "src": "src/assets/battle_backgrounds/aqua_05.png", "kind": "painted", "max_width": 420, "expect": [600, 1000] },
+    { "name": "aqua_06", "src": "src/assets/battle_backgrounds/aqua_06.png", "kind": "painted", "max_width": 420, "expect": [600, 1000] },
+    { "name": "aqua_07", "src": "src/assets/battle_backgrounds/aqua_07.png", "kind": "painted", "max_width": 420, "expect": [600, 1000] },
+    { "name": "aqua_wreck", "src": "src/assets/battle_backgrounds/aqua_wreck.png", "kind": "painted", "max_width": 420, "expect": [600, 1000] },
+    { "name": "kraken", "src": "src/assets/enemies/kraken.png", "kind": "pixel", "expect": [128, 128] },
+    { "name": "kraken_arm", "src": "src/assets/enemies/kraken_arm.png", "kind": "pixel", "expect": [128, 128] },
+    { "name": "kraken_arm_thicc", "src": "src/assets/enemies/kraken_arm_thicc.png", "kind": "pixel", "expect": [256, 384] },
+    { "name": "deep_cantor", "src": "src/assets/enemies/deep_cantor.png", "kind": "pixel", "expect": [128, 128] },
+    { "name": "shark_pack", "src": "src/assets/enemies/shark_pack.png", "kind": "pixel", "expect": [128, 128] },
+    { "name": "bog_bloat", "src": "src/assets/enemies/bog_bloat.png", "kind": "pixel", "expect": [128, 128] },
+    { "name": "old_bloat", "src": "src/assets/enemies/old_bloat.png", "kind": "pixel", "expect": [128, 128] },
+    { "name": "extra_climber", "src": "src/assets/enemies/extra_climber.png", "kind": "pixel", "expect": [128, 128] },
+    { "name": "embalmer", "src": "src/assets/enemies/embalmer.png", "kind": "pixel", "expect": [128, 128] }
+  ]
+}
