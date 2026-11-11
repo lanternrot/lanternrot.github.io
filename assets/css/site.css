@@ -394,6 +394,12 @@ footer { padding-block: 40px 56px; color: var(--muted); font-size: .9rem; }
 footer .wrap { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 20px; }
 footer .brand { display: flex; align-items: center; gap: 12px; }
 footer .brand img { width: 26px; height: 26px; }
+@media (max-width: 600px) {
+  footer .brand { flex-wrap: wrap; }
+  footer .brand .sep { display: none; }
+  footer .brand span:last-child { flex-basis: 100%; }
+  footer .brand a { white-space: nowrap; }
+}
 footer nav { display: flex; flex-wrap: wrap; gap: 20px; }
 footer nav a { color: var(--muted); text-decoration: none; }
 footer nav a:hover { color: var(--mint); }
