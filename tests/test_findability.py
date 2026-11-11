@@ -64,10 +64,10 @@ class BuiltSite(unittest.TestCase):
 
 
 class TestSitemap(BuiltSite):
-    def test_lists_home_news_and_every_post_and_nothing_else(self):
+    def test_lists_home_news_made_with_ai_and_every_post_and_nothing_else(self):
         sitemap = (self.site / "sitemap.xml").read_text()
         urls = set(re.findall(r"<loc>([^<]+)</loc>", sitemap))
-        self.assertEqual(urls, {f"{SITE_URL}/", f"{SITE_URL}/news/"} | post_urls())
+        self.assertEqual(urls, {f"{SITE_URL}/", f"{SITE_URL}/news/", f"{SITE_URL}/made-with-ai/"} | post_urls())
 
     def test_robots_points_at_the_sitemap_and_blocks_nothing(self):
         robots = (self.site / "robots.txt").read_text()
