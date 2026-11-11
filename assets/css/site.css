@@ -396,7 +396,8 @@ footer .brand { display: flex; align-items: center; gap: 12px; }
 footer .brand img { width: 26px; height: 26px; }
 @media (max-width: 600px) {
   footer .brand { flex-wrap: wrap; }
-  footer .brand span + span { flex-basis: 100%; }
+  footer .brand .sep { display: none; }
+  footer .brand span:last-child { flex-basis: 100%; }
   footer .brand a { white-space: nowrap; }
 }
 footer nav { display: flex; flex-wrap: wrap; gap: 20px; }
