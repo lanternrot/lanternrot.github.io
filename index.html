@@ -9,7 +9,10 @@ dorf_description: "A dark-fantasy hero battler for Android. Summon heroes, build
   <div class="wrap">
     <div class="words">
       <h1 style="margin:0">{% include wordmark.html %}</h1>
-      <p class="lede">Independent games and slightly cursed software. Currently forging <strong>Dorf</strong> (a dark-fantasy hero battler), Twitch chat games, and the odd creator tool.</p>
+      <div class="doors">
+        <p class="door"><span>Looking for a game to sink your evenings into? <strong>Dorf</strong> is a dark-fantasy hero battler, free in beta on Android.</span> <a href="#beta">Join the Dorf beta <span class="arrow" aria-hidden="true">→</span></a></p>
+        <p class="door stream"><span>Want your chat to have a game nobody else has? I build them one channel at a time.</span> <a href="#chat-game-request">Tell me about your channel <span class="arrow" aria-hidden="true">→</span></a></p>
+      </div>
       {%- if latest %}
       <a class="chip" href="{{ latest.url }}">
         <span class="dot" aria-hidden="true"></span>
@@ -28,7 +31,10 @@ dorf_description: "A dark-fantasy hero battler for Android. Summon heroes, build
       <p class="eyebrow">Our game</p>
       <div class="tile dorf-tile rotting">
         <div class="phones">
-          <img src="/assets/img/dorf-phone-1.webp" alt="A Dorf battle in the Bell Pit: Shasha's Fireball lands on the Knell-Called" width="824" height="1800" loading="lazy">
+          <video class="battle-clip" muted loop playsinline preload="none" poster="/assets/img/dorf-battle-poster.webp" width="824" height="1800" aria-label="A Dorf battle in the Dragon's Lair: Garrow, the Bramleigh Hog, Swift Arrow and Grandma Helga against the Shadow Dragon and his crowd">
+            <source src="/assets/video/dorf-battle.webm" type="video/webm">
+            <source src="/assets/video/dorf-battle.mp4" type="video/mp4">
+          </video>
           <img src="/assets/img/dorf-phone-2.webp" alt="The Dorf summon screen: Selwyn, Twice Seen, on The Hollow Tide banner" width="824" height="1800" loading="lazy">
         </div>
         <div class="dorf-copy">
@@ -37,10 +43,11 @@ dorf_description: "A dark-fantasy hero battler for Android. Summon heroes, build
           <p class="tagline">Adventurers wanted. No pay. Frequent death.</p>
           <p style="margin:0;color:var(--muted)">{{ page.dorf_description }}</p>
           <ul class="facts">
-            <li>Over 70 heroes across 9 classes</li>
-            <li>Summon banners with a pity system</li>
-            <li>Four-hero parties, turn-based combat</li>
-            <li>Updates download inside the game</li>
+            <li>Summon from over 80 heroes across 9 classes and from all walks of life, from the humble street urchin Salia to the mighty avatar of nature itself, Yggra.</li>
+            <li>No microtransactions, monthly banners with continuing pity.</li>
+            <li>Build a party of four and fight turn-based battles in forests, volcanoes, under the sea, and in other realms incomprehensible.</li>
+            <li>New content and updates download inside the game, ready for your adventure.</li>
+            <li>Hang out on <a href="https://www.twitch.tv/deltran">our Twitch streams</a> and your Channel Points can buy Summon Tickets.</li>
           </ul>
           <div class="actions">
             <a class="pill" href="#beta">Request beta access</a>
@@ -53,7 +60,7 @@ dorf_description: "A dark-fantasy hero battler for Android. Summon heroes, build
     <div class="parade">
       <div class="wrap parade-head">
         <p class="eyebrow" style="margin:0">The roster</p>
-        <p><b>{{ site.data.parade | size }}</b> of the 70+ heroes<span class="hover-only"> · hover to pause</span></p>
+        <p><b>{{ site.data.parade | size }}</b> of the 80+ heroes<span class="hover-only"> · hover to pause</span></p>
       </div>
       <div class="belt" aria-label="Some of Dorf's heroes">
         <ul class="track">{% include parade-items.html %}{% include parade-items.html hidden=true %}</ul>
@@ -104,8 +111,8 @@ dorf_description: "A dark-fantasy hero battler for Android. Summon heroes, build
     <div class="wrap">
       <div class="sec-head">
         <p class="eyebrow">Built for streamers</p>
-        <h2>Twitch chat games</h2>
-        <p class="intro">Games that live in a streamer's chat: viewers type commands, collect things, and watch it happen on stream. Each one is built for a specific channel.</p>
+        <h2>Give your stream something only your channel has.</h2>
+        <p class="intro">For streamers whose regulars already have inside jokes, and want a game built around them.</p>
       </div>
       <div class="bento">
         <article class="tile game big spot">
@@ -130,8 +137,8 @@ dorf_description: "A dark-fantasy hero battler for Android. Summon heroes, build
         </article>
       </div>
       <div class="tile form-tile rotting cg-ask" id="chat-game-request">
-        <h3>Want one for your channel?</h3>
-        <p class="intro">I build these one channel at a time, around the people who watch it. Tell me about yours and what you'd like chat to do.</p>
+        <h3>Want something for your channel?</h3>
+        <p class="intro">I build chat games, shoutout tools, overlays, redeems and Discord bots, one channel at a time, around the people who watch it. Tell me about your channel and what you have in mind.</p>
         <form id="cg-form" novalidate data-access-key="{{ site.web3forms_access_key }}">
           <label for="cg-email">Email
             <input id="cg-email" name="email" type="email" autocomplete="email" required placeholder="you@example.com">

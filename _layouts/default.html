@@ -42,5 +42,7 @@
 {{ content }}
 {% include footer.html %}
 <script type="module" src="/assets/js/site.js"></script>
+<!-- Cloudflare Web Analytics: cookieless visit counts. The token is public by design; the site's DNS is on Cloudflare but unproxied, so this beacon is the only thing that counts visits. -->
+<script type="module" src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "3f4a13c4fd1f421f8bbaedefc969b23f"}'></script><!-- gitleaks:allow (public beacon token) -->
 </body>
 </html>

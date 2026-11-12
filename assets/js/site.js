@@ -242,6 +242,17 @@ function initRotGrid() {
   }
 }
 
+// Dorf battle clip: it loads and plays only while it's near the screen, and never for
+// visitors who asked for reduced motion (they keep the still frame).
+function initBattleClip() {
+  const clip = document.querySelector(".battle-clip");
+  if (!clip || still) return;
+  new IntersectionObserver(([entry]) => {
+    if (!entry.isIntersecting) { clip.pause(); return; }
+    clip.play().catch(err => console.warn("Dorf battle clip didn't start, so the still frame stays up.", err));
+  }, { rootMargin: "200px" }).observe(clip);
+}
+
 initNav();
 initWordmark();
 initLantern();
@@ -250,3 +261,4 @@ initBetaForm();
 initChatGameForm();
 initChip();
 initRotGrid();
+initBattleClip();
