@@ -1,0 +1,29 @@
+{
+  "version": "5.3.0",
+  "release": "d19c6d70d",
+  "previous": "36582a80c",
+  "budget_kb": 1500,
+  "art": [
+    { "name": "banner", "src": "src/assets/maps/coral_depths.webp", "kind": "painted", "max_width": 1400, "expect": [2400, 1792] },
+    { "name": "coral_01", "src": "src/assets/battle_backgrounds/coral_01.png", "kind": "painted", "crop": [0, 120, 600, 600], "max_width": 420, "expect": [600, 1000] },
+    { "name": "coral_02", "src": "src/assets/battle_backgrounds/coral_02.png", "kind": "painted", "crop": [0, 120, 600, 600], "max_width": 420, "expect": [600, 1000] },
+    { "name": "coral_03", "src": "src/assets/battle_backgrounds/coral_03.png", "kind": "painted", "crop": [0, 120, 600, 600], "max_width": 420, "expect": [600, 1000] },
+    { "name": "coral_07", "src": "src/assets/battle_backgrounds/coral_07.png", "kind": "painted", "crop": [0, 120, 600, 600], "max_width": 420, "expect": [600, 1000] },
+    { "name": "coral_04", "src": "src/assets/battle_backgrounds/coral_04.png", "kind": "painted", "crop": [0, 120, 600, 600], "max_width": 420, "expect": [600, 1000] },
+    { "name": "coral_05", "src": "src/assets/battle_backgrounds/coral_05.png", "kind": "painted", "crop": [0, 120, 600, 600], "max_width": 420, "expect": [600, 1000] },
+    { "name": "coral_08", "src": "src/assets/battle_backgrounds/coral_08.png", "kind": "painted", "crop": [0, 120, 600, 600], "max_width": 420, "expect": [600, 1000] },
+    { "name": "coral_09", "src": "src/assets/battle_backgrounds/coral_09.png", "kind": "painted", "crop": [0, 120, 600, 600], "max_width": 420, "expect": [600, 1000] },
+    { "name": "coral_10", "src": "src/assets/battle_backgrounds/coral_10.png", "kind": "painted", "crop": [0, 120, 600, 600], "max_width": 420, "expect": [600, 1000] },
+    { "name": "coral_11", "src": "src/assets/battle_backgrounds/coral_11.png", "kind": "painted", "crop": [0, 120, 600, 600], "max_width": 420, "expect": [600, 1000] },
+    { "name": "coral_06", "src": "src/assets/battle_backgrounds/coral_06.png", "kind": "painted", "crop": [0, 120, 600, 600], "max_width": 420, "expect": [600, 1000] },
+    { "name": "grouper", "src": "src/assets/enemies/grouper.png", "kind": "pixel", "expect": [128, 128] },
+    { "name": "reef_barracuda", "src": "src/assets/enemies/reef_barracuda.png", "kind": "pixel", "expect": [128, 128] },
+    { "name": "parrotfish", "src": "src/assets/enemies/parrotfish.png", "kind": "pixel", "expect": [128, 128] },
+    { "name": "prison_06", "src": "src/assets/battle_backgrounds/prison_06.png", "kind": "painted", "crop": [0, 60, 600, 700], "max_width": 480, "expect": [600, 1000] },
+    { "name": "prison_inmate", "src": "src/assets/enemies/prison_inmate.png", "kind": "pixel", "expect": [128, 128] },
+    { "name": "scrap_iron", "src": "src/assets/icons/item_forge_iron_1.png", "kind": "pixel", "expect": [48, 48] },
+    { "name": "pig_iron", "src": "src/assets/icons/item_forge_iron_2.png", "kind": "pixel", "expect": [48, 48] },
+    { "name": "steel_ingot", "src": "src/assets/icons/item_forge_iron_3.png", "kind": "pixel", "expect": [48, 48] },
+    { "name": "blackiron_ingot", "src": "src/assets/icons/item_forge_iron_4.png", "kind": "pixel", "expect": [48, 48] }
+  ]
+}
