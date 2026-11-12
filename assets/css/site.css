@@ -127,7 +127,8 @@ section { padding-block: 88px; border-bottom: 1px solid var(--line); }
     var(--surface);
 }
 .phones { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; align-items: start; }
-.phones img { border: 1px solid var(--line); background: var(--bg-deep); }
+.phones img, .phones video { border: 1px solid var(--line); background: var(--bg-deep); }
+.phones video { display: block; width: 100%; height: auto; }
 .phones img:nth-child(2) { margin-top: 48px; }
 .dorf-copy { min-width: 0; }
 .dorf-copy .logo { width: min(340px, 100%); }
