@@ -1,5 +1,7 @@
 # The studio's profile pages. The footer's "Elsewhere" links and the JSON-LD
 # sameAs list both read this file, in this order.
+- name: Twitch
+  url: https://www.twitch.tv/deltran
 - name: YouTube
   url: https://www.youtube.com/@lanternrotsoftware
 - name: Bluesky
