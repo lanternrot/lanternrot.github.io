@@ -1094,36 +1094,6 @@
     "height": 128,
     "kind": "pixel"
   },
-  "/assets/img/news/5.4.0/currents_01.webp": {
-    "width": 360,
-    "height": 450,
-    "kind": "painted"
-  },
-  "/assets/img/news/5.4.0/currents_02.webp": {
-    "width": 360,
-    "height": 450,
-    "kind": "painted"
-  },
-  "/assets/img/news/5.4.0/currents_04.webp": {
-    "width": 360,
-    "height": 450,
-    "kind": "painted"
-  },
-  "/assets/img/news/5.4.0/currents_07.webp": {
-    "width": 360,
-    "height": 450,
-    "kind": "painted"
-  },
-  "/assets/img/news/5.4.0/currents_08.webp": {
-    "width": 360,
-    "height": 450,
-    "kind": "painted"
-  },
-  "/assets/img/news/5.4.0/currents_11.webp": {
-    "width": 360,
-    "height": 450,
-    "kind": "painted"
-  },
   "/assets/img/news/5.4.0/drowned_captain.webp": {
     "width": 128,
     "height": 128,
@@ -1135,17 +1105,7 @@
     "kind": "pixel"
   },
   "/assets/img/news/5.4.0/fort_breach.webp": {
-    "width": 360,
-    "height": 450,
-    "kind": "painted"
-  },
-  "/assets/img/news/5.4.0/fort_corridor.webp": {
-    "width": 360,
-    "height": 450,
-    "kind": "painted"
-  },
-  "/assets/img/news/5.4.0/fort_ramparts.webp": {
-    "width": 360,
+    "width": 600,
     "height": 450,
     "kind": "painted"
   },
@@ -1227,65 +1187,10 @@
     "height": 128,
     "kind": "pixel"
   },
-  "/assets/img/news/5.4.0/shipyard_01.webp": {
-    "width": 360,
-    "height": 450,
-    "kind": "painted"
-  },
-  "/assets/img/news/5.4.0/shipyard_02.webp": {
-    "width": 360,
-    "height": 450,
-    "kind": "painted"
-  },
-  "/assets/img/news/5.4.0/shipyard_03.webp": {
-    "width": 360,
-    "height": 450,
-    "kind": "painted"
-  },
-  "/assets/img/news/5.4.0/shipyard_04.webp": {
-    "width": 360,
-    "height": 450,
-    "kind": "painted"
-  },
-  "/assets/img/news/5.4.0/shipyard_05.webp": {
-    "width": 360,
-    "height": 450,
-    "kind": "painted"
-  },
   "/assets/img/news/5.4.0/tide_lurker.webp": {
     "width": 128,
     "height": 128,
     "kind": "pixel"
-  },
-  "/assets/img/news/5.4.0/tidewall_01.webp": {
-    "width": 360,
-    "height": 450,
-    "kind": "painted"
-  },
-  "/assets/img/news/5.4.0/tidewall_02.webp": {
-    "width": 360,
-    "height": 450,
-    "kind": "painted"
-  },
-  "/assets/img/news/5.4.0/tidewall_04.webp": {
-    "width": 360,
-    "height": 450,
-    "kind": "painted"
-  },
-  "/assets/img/news/5.4.0/tidewall_05.webp": {
-    "width": 360,
-    "height": 450,
-    "kind": "painted"
-  },
-  "/assets/img/news/5.4.0/tidewall_07.webp": {
-    "width": 360,
-    "height": 450,
-    "kind": "painted"
-  },
-  "/assets/img/news/5.4.0/tidewall_11.webp": {
-    "width": 360,
-    "height": 450,
-    "kind": "painted"
   },
   "/assets/img/news/5.4.0/wall_guard.webp": {
     "width": 128,
