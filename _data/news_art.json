@@ -1073,5 +1073,223 @@
     "width": 48,
     "height": 48,
     "kind": "pixel"
+  },
+  "/assets/img/news/5.4.0/aquarian_enforcer.webp": {
+    "width": 128,
+    "height": 128,
+    "kind": "pixel"
+  },
+  "/assets/img/news/5.4.0/banner.webp": {
+    "width": 1400,
+    "height": 781,
+    "kind": "painted"
+  },
+  "/assets/img/news/5.4.0/castellan.webp": {
+    "width": 128,
+    "height": 128,
+    "kind": "pixel"
+  },
+  "/assets/img/news/5.4.0/cousin_simnel.webp": {
+    "width": 128,
+    "height": 128,
+    "kind": "pixel"
+  },
+  "/assets/img/news/5.4.0/currents_01.webp": {
+    "width": 360,
+    "height": 450,
+    "kind": "painted"
+  },
+  "/assets/img/news/5.4.0/currents_02.webp": {
+    "width": 360,
+    "height": 450,
+    "kind": "painted"
+  },
+  "/assets/img/news/5.4.0/currents_04.webp": {
+    "width": 360,
+    "height": 450,
+    "kind": "painted"
+  },
+  "/assets/img/news/5.4.0/currents_07.webp": {
+    "width": 360,
+    "height": 450,
+    "kind": "painted"
+  },
+  "/assets/img/news/5.4.0/currents_08.webp": {
+    "width": 360,
+    "height": 450,
+    "kind": "painted"
+  },
+  "/assets/img/news/5.4.0/currents_11.webp": {
+    "width": 360,
+    "height": 450,
+    "kind": "painted"
+  },
+  "/assets/img/news/5.4.0/drowned_captain.webp": {
+    "width": 128,
+    "height": 128,
+    "kind": "pixel"
+  },
+  "/assets/img/news/5.4.0/drowned_sailor.webp": {
+    "width": 128,
+    "height": 128,
+    "kind": "pixel"
+  },
+  "/assets/img/news/5.4.0/fort_breach.webp": {
+    "width": 360,
+    "height": 450,
+    "kind": "painted"
+  },
+  "/assets/img/news/5.4.0/fort_corridor.webp": {
+    "width": 360,
+    "height": 450,
+    "kind": "painted"
+  },
+  "/assets/img/news/5.4.0/fort_ramparts.webp": {
+    "width": 360,
+    "height": 450,
+    "kind": "painted"
+  },
+  "/assets/img/news/5.4.0/groaning_board_pie.webp": {
+    "width": 60,
+    "height": 60,
+    "kind": "pixel"
+  },
+  "/assets/img/news/5.4.0/gunner.webp": {
+    "width": 128,
+    "height": 128,
+    "kind": "pixel"
+  },
+  "/assets/img/news/5.4.0/harvest_plait.webp": {
+    "width": 96,
+    "height": 96,
+    "kind": "pixel"
+  },
+  "/assets/img/news/5.4.0/ione.webp": {
+    "width": 720,
+    "height": 682,
+    "kind": "painted",
+    "cutout": true
+  },
+  "/assets/img/news/5.4.0/loop_amyas_merestone.webp": {
+    "width": 128,
+    "height": 128,
+    "kind": "pixel"
+  },
+  "/assets/img/news/5.4.0/loop_bramleigh_hog.webp": {
+    "width": 128,
+    "height": 128,
+    "kind": "pixel"
+  },
+  "/assets/img/news/5.4.0/loop_cousin_simnel.webp": {
+    "width": 128,
+    "height": 128,
+    "kind": "pixel"
+  },
+  "/assets/img/news/5.4.0/loop_street_urchin.webp": {
+    "width": 128,
+    "height": 128,
+    "kind": "pixel"
+  },
+  "/assets/img/news/5.4.0/outer_currents.webp": {
+    "width": 1100,
+    "height": 821,
+    "kind": "painted"
+  },
+  "/assets/img/news/5.4.0/powder_monkey.webp": {
+    "width": 128,
+    "height": 128,
+    "kind": "pixel"
+  },
+  "/assets/img/news/5.4.0/purser.webp": {
+    "width": 128,
+    "height": 128,
+    "kind": "pixel"
+  },
+  "/assets/img/news/5.4.0/salia.webp": {
+    "width": 128,
+    "height": 128,
+    "kind": "pixel"
+  },
+  "/assets/img/news/5.4.0/salia_attack.webp": {
+    "width": 700,
+    "height": 700,
+    "kind": "painted",
+    "cutout": true
+  },
+  "/assets/img/news/5.4.0/salia_tale.webp": {
+    "width": 300,
+    "height": 941,
+    "kind": "painted",
+    "cutout": true
+  },
+  "/assets/img/news/5.4.0/sergeant.webp": {
+    "width": 128,
+    "height": 128,
+    "kind": "pixel"
+  },
+  "/assets/img/news/5.4.0/shipyard_01.webp": {
+    "width": 360,
+    "height": 450,
+    "kind": "painted"
+  },
+  "/assets/img/news/5.4.0/shipyard_02.webp": {
+    "width": 360,
+    "height": 450,
+    "kind": "painted"
+  },
+  "/assets/img/news/5.4.0/shipyard_03.webp": {
+    "width": 360,
+    "height": 450,
+    "kind": "painted"
+  },
+  "/assets/img/news/5.4.0/shipyard_04.webp": {
+    "width": 360,
+    "height": 450,
+    "kind": "painted"
+  },
+  "/assets/img/news/5.4.0/shipyard_05.webp": {
+    "width": 360,
+    "height": 450,
+    "kind": "painted"
+  },
+  "/assets/img/news/5.4.0/tide_lurker.webp": {
+    "width": 128,
+    "height": 128,
+    "kind": "pixel"
+  },
+  "/assets/img/news/5.4.0/tidewall_01.webp": {
+    "width": 360,
+    "height": 450,
+    "kind": "painted"
+  },
+  "/assets/img/news/5.4.0/tidewall_02.webp": {
+    "width": 360,
+    "height": 450,
+    "kind": "painted"
+  },
+  "/assets/img/news/5.4.0/tidewall_04.webp": {
+    "width": 360,
+    "height": 450,
+    "kind": "painted"
+  },
+  "/assets/img/news/5.4.0/tidewall_05.webp": {
+    "width": 360,
+    "height": 450,
+    "kind": "painted"
+  },
+  "/assets/img/news/5.4.0/tidewall_07.webp": {
+    "width": 360,
+    "height": 450,
+    "kind": "painted"
+  },
+  "/assets/img/news/5.4.0/tidewall_11.webp": {
+    "width": 360,
+    "height": 450,
+    "kind": "painted"
+  },
+  "/assets/img/news/5.4.0/wall_guard.webp": {
+    "width": 128,
+    "height": 128,
+    "kind": "pixel"
   }
 }

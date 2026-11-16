@@ -1,0 +1,504 @@
+{
+ "version": "5.4.0",
+ "release": "107db81f9",
+ "previous": "d19c6d70d",
+ "budget_kb": 2000,
+ "art": [
+  {
+   "name": "banner",
+   "src": "src/assets/maps/tidewall_ruins.webp",
+   "kind": "painted",
+   "max_width": 1400,
+   "expect": [
+    2752,
+    1536
+   ]
+  },
+  {
+   "name": "outer_currents",
+   "src": "src/assets/maps/outer_currents.webp",
+   "kind": "painted",
+   "max_width": 1100,
+   "expect": [
+    2400,
+    1792
+   ]
+  },
+  {
+   "name": "ione",
+   "src": "src/assets/npcs/tales/ione.avif",
+   "kind": "painted",
+   "max_width": 720,
+   "expect": [
+    1690,
+    1600
+   ]
+  },
+  {
+   "name": "salia_tale",
+   "src": "src/assets/heroes/tales/street_urchin.avif",
+   "kind": "painted",
+   "max_width": 300,
+   "expect": [
+    510,
+    1600
+   ]
+  },
+  {
+   "name": "salia_attack",
+   "src": "src/assets/heroes/tales/attack/street_urchin.avif",
+   "kind": "painted",
+   "max_width": 700,
+   "expect": [
+    1200,
+    1200
+   ]
+  },
+  {
+   "name": "wall_guard",
+   "src": "src/assets/enemies/wall_guard.png",
+   "kind": "pixel",
+   "expect": [
+    128,
+    128
+   ]
+  },
+  {
+   "name": "tide_lurker",
+   "src": "src/assets/enemies/tide_lurker.png",
+   "kind": "pixel",
+   "expect": [
+    128,
+    128
+   ]
+  },
+  {
+   "name": "aquarian_enforcer",
+   "src": "src/assets/enemies/aquarian_enforcer.png",
+   "kind": "pixel",
+   "expect": [
+    128,
+    128
+   ]
+  },
+  {
+   "name": "gunner",
+   "src": "src/assets/enemies/gunner.png",
+   "kind": "pixel",
+   "expect": [
+    128,
+    128
+   ]
+  },
+  {
+   "name": "powder_monkey",
+   "src": "src/assets/enemies/powder_monkey.png",
+   "kind": "pixel",
+   "expect": [
+    128,
+    128
+   ]
+  },
+  {
+   "name": "purser",
+   "src": "src/assets/enemies/purser.png",
+   "kind": "pixel",
+   "expect": [
+    128,
+    128
+   ]
+  },
+  {
+   "name": "drowned_captain",
+   "src": "src/assets/enemies/drowned_captain.png",
+   "kind": "pixel",
+   "expect": [
+    128,
+    128
+   ]
+  },
+  {
+   "name": "drowned_sailor",
+   "src": "src/assets/enemies/drowned_sailor.png",
+   "kind": "pixel",
+   "expect": [
+    128,
+    128
+   ]
+  },
+  {
+   "name": "sergeant",
+   "src": "src/assets/enemies/deserter_sergeant.png",
+   "kind": "pixel",
+   "expect": [
+    128,
+    128
+   ]
+  },
+  {
+   "name": "castellan",
+   "src": "src/assets/enemies/fort_castellan.png",
+   "kind": "pixel",
+   "expect": [
+    128,
+    128
+   ]
+  },
+  {
+   "name": "cousin_simnel",
+   "src": "src/assets/heroes/cousin_simnel.png",
+   "kind": "pixel",
+   "expect": [
+    128,
+    128
+   ]
+  },
+  {
+   "name": "salia",
+   "src": "src/assets/heroes/street_urchin.png",
+   "kind": "pixel",
+   "expect": [
+    128,
+    128
+   ]
+  },
+  {
+   "name": "harvest_plait",
+   "src": "src/assets/tavern-wide/wall_decoration/harvest_plait_day.png",
+   "kind": "pixel",
+   "expect": [
+    96,
+    96
+   ]
+  },
+  {
+   "name": "groaning_board_pie",
+   "src": "src/assets/tavern-wide/dishes/bramleigh_feast.png",
+   "kind": "pixel",
+   "expect": [
+    60,
+    60
+   ]
+  },
+  {
+   "name": "tidewall_01",
+   "src": "src/assets/battle_backgrounds/tidewall_01.png",
+   "kind": "painted",
+   "crop": [
+    0,
+    150,
+    600,
+    750
+   ],
+   "max_width": 360,
+   "expect": [
+    600,
+    1000
+   ]
+  },
+  {
+   "name": "tidewall_02",
+   "src": "src/assets/battle_backgrounds/tidewall_02.png",
+   "kind": "painted",
+   "crop": [
+    0,
+    150,
+    600,
+    750
+   ],
+   "max_width": 360,
+   "expect": [
+    600,
+    1000
+   ]
+  },
+  {
+   "name": "tidewall_04",
+   "src": "src/assets/battle_backgrounds/tidewall_04.png",
+   "kind": "painted",
+   "crop": [
+    0,
+    150,
+    600,
+    750
+   ],
+   "max_width": 360,
+   "expect": [
+    600,
+    1000
+   ]
+  },
+  {
+   "name": "tidewall_07",
+   "src": "src/assets/battle_backgrounds/tidewall_07.png",
+   "kind": "painted",
+   "crop": [
+    0,
+    150,
+    600,
+    750
+   ],
+   "max_width": 360,
+   "expect": [
+    600,
+    1000
+   ]
+  },
+  {
+   "name": "tidewall_11",
+   "src": "src/assets/battle_backgrounds/tidewall_11.png",
+   "kind": "painted",
+   "crop": [
+    0,
+    150,
+    600,
+    750
+   ],
+   "max_width": 360,
+   "expect": [
+    600,
+    1000
+   ]
+  },
+  {
+   "name": "tidewall_05",
+   "src": "src/assets/battle_backgrounds/tidewall_05.png",
+   "kind": "painted",
+   "crop": [
+    0,
+    150,
+    600,
+    750
+   ],
+   "max_width": 360,
+   "expect": [
+    600,
+    1000
+   ]
+  },
+  {
+   "name": "currents_01",
+   "src": "src/assets/battle_backgrounds/currents_01.png",
+   "kind": "painted",
+   "crop": [
+    0,
+    150,
+    600,
+    750
+   ],
+   "max_width": 360,
+   "expect": [
+    600,
+    1000
+   ]
+  },
+  {
+   "name": "currents_07",
+   "src": "src/assets/battle_backgrounds/currents_07.png",
+   "kind": "painted",
+   "crop": [
+    0,
+    150,
+    600,
+    750
+   ],
+   "max_width": 360,
+   "expect": [
+    600,
+    1000
+   ]
+  },
+  {
+   "name": "currents_02",
+   "src": "src/assets/battle_backgrounds/currents_02.png",
+   "kind": "painted",
+   "crop": [
+    0,
+    150,
+    600,
+    750
+   ],
+   "max_width": 360,
+   "expect": [
+    600,
+    1000
+   ]
+  },
+  {
+   "name": "currents_04",
+   "src": "src/assets/battle_backgrounds/currents_04.png",
+   "kind": "painted",
+   "crop": [
+    0,
+    150,
+    600,
+    750
+   ],
+   "max_width": 360,
+   "expect": [
+    600,
+    1000
+   ]
+  },
+  {
+   "name": "currents_08",
+   "src": "src/assets/battle_backgrounds/currents_08.png",
+   "kind": "painted",
+   "crop": [
+    0,
+    150,
+    600,
+    750
+   ],
+   "max_width": 360,
+   "expect": [
+    600,
+    1000
+   ]
+  },
+  {
+   "name": "currents_11",
+   "src": "src/assets/battle_backgrounds/currents_11.png",
+   "kind": "painted",
+   "crop": [
+    0,
+    150,
+    600,
+    750
+   ],
+   "max_width": 360,
+   "expect": [
+    600,
+    1000
+   ]
+  },
+  {
+   "name": "shipyard_01",
+   "src": "src/assets/battle_backgrounds/shipyard_01.png",
+   "kind": "painted",
+   "crop": [
+    0,
+    150,
+    600,
+    750
+   ],
+   "max_width": 360,
+   "expect": [
+    600,
+    1000
+   ]
+  },
+  {
+   "name": "shipyard_02",
+   "src": "src/assets/battle_backgrounds/shipyard_02.png",
+   "kind": "painted",
+   "crop": [
+    0,
+    150,
+    600,
+    750
+   ],
+   "max_width": 360,
+   "expect": [
+    600,
+    1000
+   ]
+  },
+  {
+   "name": "shipyard_03",
+   "src": "src/assets/battle_backgrounds/shipyard_03.png",
+   "kind": "painted",
+   "crop": [
+    0,
+    150,
+    600,
+    750
+   ],
+   "max_width": 360,
+   "expect": [
+    600,
+    1000
+   ]
+  },
+  {
+   "name": "shipyard_04",
+   "src": "src/assets/battle_backgrounds/shipyard_04.png",
+   "kind": "painted",
+   "crop": [
+    0,
+    150,
+    600,
+    750
+   ],
+   "max_width": 360,
+   "expect": [
+    600,
+    1000
+   ]
+  },
+  {
+   "name": "shipyard_05",
+   "src": "src/assets/battle_backgrounds/shipyard_05.png",
+   "kind": "painted",
+   "crop": [
+    0,
+    150,
+    600,
+    750
+   ],
+   "max_width": 360,
+   "expect": [
+    600,
+    1000
+   ]
+  },
+  {
+   "name": "fort_breach",
+   "src": "src/assets/battle_backgrounds/fort_breach.png",
+   "kind": "painted",
+   "crop": [
+    0,
+    150,
+    600,
+    750
+   ],
+   "max_width": 360,
+   "expect": [
+    600,
+    1000
+   ]
+  },
+  {
+   "name": "fort_ramparts",
+   "src": "src/assets/battle_backgrounds/fort_ramparts.png",
+   "kind": "painted",
+   "crop": [
+    0,
+    150,
+    600,
+    750
+   ],
+   "max_width": 360,
+   "expect": [
+    600,
+    1000
+   ]
+  },
+  {
+   "name": "fort_corridor",
+   "src": "src/assets/battle_backgrounds/fort_corridor.png",
+   "kind": "painted",
+   "crop": [
+    0,
+    150,
+    600,
+    750
+   ],
+   "max_width": 360,
+   "expect": [
+    600,
+    1000
+   ]
+  }
+ ]
+}
